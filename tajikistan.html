@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS in Tajikistan - Top Medical Universities | Universal Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #006600; /* Tajik green */
+            --secondary: #cc0000; /* Red accent */
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --accent: #ffcc00; /* Gold for highlights */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1605540436563-5bca919ae766?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+            font-size: 2.5rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin: 25px 0 15px;
+            font-size: 1.8rem;
+        }
+        
+        /* Why Tajikistan Section */
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-top: 5px solid var(--primary);
+            text-align: center;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .benefit-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+        
+        /* Universities Table */
+        .table-container {
+            overflow-x: auto;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background: white;
+            padding: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 18px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Fee Structure */
+        .fee-structure {
+            background: white;
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+        
+        .fee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .fee-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .fee-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-right: 20px;
+            margin-top: 5px;
+            min-width: 40px;
+        }
+        
+        /* Recognition Section */
+        .recognition {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .recognition-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            width: 200px;
+            transition: all 0.3s ease;
+        }
+        
+        .badge:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .badge i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        /* Student Life */
+        .life-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .life-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            height: 300px;
+        }
+        
+        .life-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .life-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .life-card h3 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-card i {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            color: var(--accent);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .social-icons {
+            margin: 30px 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .benefit-card, .contact-card {
+                padding: 30px 20px;
+            }
+            
+            .fee-structure {
+                padding: 30px 20px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate {
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1 class="animate">MBBS in Tajikistan</h1>
+            <p class="tagline animate delay-1">Quality Medical Education at Lowest Cost</p>
+            <p class="animate delay-2" style="max-width: 800px; margin: 0 auto;">Study at NMC approved universities with English medium instruction and global recognition</p>
+            <a href="#contact" class="cta-button animate delay-3">Apply Now</a>
+        </div>
+    </header>
+
+    <!-- Why Tajikistan Section -->
+    <section id="why-tajikistan">
+        <div class="container">
+            <h2 class="animate">Why Study MBBS in Tajikistan?</h2>
+            <p class="animate delay-1" style="text-align: center; max-width: 900px; margin: 0 auto;">Tajikistan has emerged as a preferred destination for Indian medical aspirants seeking quality education at affordable costs.</p>
+            
+            <div class="benefits-container">
+                <div class="benefit-card animate delay-1">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Lowest Cost</h3>
+                    <p>Complete MBBS for <span class="highlight">₹15-20 lakhs</span> including tuition & living (1/3rd of Indian private colleges)</p>
+                </div>
+                
+                <div class="benefit-card animate delay-2">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>NMC Approved</h3>
+                    <p>Degrees recognized by National Medical Commission (NMC) for FMGE/NEXT</p>
+                </div>
+                
+                <div class="benefit-card animate delay-3">
+                    <i class="fas fa-language"></i>
+                    <h3>English Medium</h3>
+                    <p>Complete course taught in English with no local language barrier</p>
+                </div>
+                
+                <div class="benefit-card animate delay-1">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>No Donation</h3>
+                    <p>Transparent admission with no capitation fee or hidden charges</p>
+                </div>
+                
+                <div class="benefit-card animate delay-2">
+                    <i class="fas fa-flask"></i>
+                    <h3>Modern Facilities</h3>
+                    <p>Well-equipped labs, libraries and teaching hospitals</p>
+                </div>
+                
+                <div class="benefit-card animate delay-3">
+                    <i class="fas fa-users"></i>
+                    <h3>Indian Community</h3>
+                    <p>Large Indian student population with Indian food available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Universities Section -->
+    <section id="universities" style="background-color: #f1f7fd;">
+        <div class="container">
+            <h2 class="animate">Top Medical Universities in Tajikistan</h2>
+            <p class="animate delay-1" style="text-align: center;">Tajikistan has NMC approved medical universities offering excellent education</p>
+            
+            <div class="table-container animate delay-2">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>University</th>
+                            <th>Location</th>
+                            <th>Established</th>
+                            <th>Annual Fees (USD)</th>
+                            <th>NMC Recognition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tajik State Medical University</td>
+                            <td>Dushanbe</td>
+                            <td>1939</td>
+                            <td>$3,500 - $4,000</td>
+                            <td><i class="fas fa-check" style="color: green;"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Avicenna Tajik State Medical University</td>
+                            <td>Dushanbe</td>
+                            <td>1939</td>
+                            <td>$3,800 - $4,500</td>
+                            <td><i class="fas fa-check" style="color: green;"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Khujand State University</td>
+                            <td>Khujand</td>
+                            <td>1932</td>
+                            <td>$3,200 - $3,800</td>
+                            <td><i class="fas fa-check" style="color: green;"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fee Structure Section -->
+    <section id="fee-structure">
+        <div class="container">
+            <h2 class="animate">MBBS in Tajikistan - Fee Structure</h2>
+            <p class="animate delay-1" style="text-align: center;">Most affordable medical education compared to other countries</p>
+            
+            <div class="fee-structure animate delay-2">
+                <div class="fee-grid">
+                    <div class="fee-item">
+                        <div class="fee-icon">
+                            <i class="fas fa-money-bill-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Tuition Fees</h3>
+                            <p>$3,200 - $4,500 per year (varies by university)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fee-item">
+                        <div class="fee-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div>
+                            <h3>Hostel Fees</h3>
+                            <p>$800 - $1,200 per year (shared accommodation)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fee-item">
+                        <div class="fee-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div>
+                            <h3>Living Expenses</h3>
+                            <p>$100 - $150 per month (food, transport, etc.)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fee-item">
+                        <div class="fee-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <div>
+                            <h3>Other Expenses</h3>
+                            <p>Medical insurance, visa extension (~$300/year)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; margin-top: 50px; text-align: center;">
+                    <h3 style="color: var(--primary);">Total Estimated Cost</h3>
+                    <p style="font-size: 1.5rem; margin-top: 15px;"><span class="highlight">₹15-20 lakhs for complete 5.5 years</span> including tuition, hostel and living</p>
+                    <p style="margin-top: 15px;">(1/3rd the cost of Indian private medical colleges)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recognition Section -->
+    <section class="recognition">
+        <div class="container">
+            <h2 class="animate">Global Recognition</h2>
+            <p class="animate delay-1" style="max-width: 800px; margin: 0 auto;">Tajik medical degrees are recognized by major medical councils worldwide</p>
+            
+            <div class="recognition-badges">
+                <div class="badge animate delay-1">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>NMC Approved</h3>
+                    <p>Eligible for FMGE/NEXT</p>
+                </div>
+                
+                <div class="badge animate delay-2">
+                    <i class="fas fa-globe"></i>
+                    <h3>WHO Listed</h3>
+                    <p>World Directory of Medical Schools</p>
+                </div>
+                
+                <div class="badge animate delay-3">
+                    <i class="fas fa-flag"></i>
+                    <h3>Ministry Approved</h3>
+                    <p>Recognized by Tajik Health Ministry</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Life Section -->
+    <section id="student-life">
+        <div class="container">
+            <h2 class="animate">Life as a Medical Student in Tajikistan</h2>
+            <p class="animate delay-1" style="text-align: center; max-width: 800px; margin: 0 auto;">Comfortable living with all necessary facilities for international students</p>
+            
+            <div class="life-grid">
+                <div class="life-card animate delay-1">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="University Campus">
+                    <h3>Modern University Campus</h3>
+                </div>
+                
+                <div class="life-card animate delay-2">
+                    <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Student Hostel">
+                    <h3>Comfortable Hostel Accommodation</h3>
+                </div>
+                
+                <div class="life-card animate delay-3">
+                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Indian Food">
+                    <h3>Indian Food Availability</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Process Section -->
+    <section id="admission" style="background-color: #f1f7fd;">
+        <div class="container">
+            <h2 class="animate">Admission Process</h2>
+            <p class="animate delay-1" style="text-align: center;">Simple admission process for Indian students</p>
+            
+            <div style="max-width: 900px; margin: 50px auto 0;" class="animate delay-2">
+                <div style="display: flex; align-items: center; margin-bottom: 30px;">
+                    <div style="background: var(--primary); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.5rem; flex-shrink: 0; margin-right: 20px;">1</div>
+                    <div>
+                        <h3 style="margin: 0 0 10px 0;">Submit Documents</h3>
+                        <p>10th & 12th mark sheets, NEET scorecard, passport copy, medical certificate</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; margin-bottom: 30px;">
+                    <div style="background: var(--primary); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.5rem; flex-shrink: 0; margin-right: 20px;">2</div>
+                    <div>
+                        <h3 style="margin: 0 0 10px 0;">Receive Admission Letter</h3>
+                        <p>Get admission confirmation within 2-3 weeks</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; margin-bottom: 30px;">
+                    <div style="background: var(--primary); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.5rem; flex-shrink: 0; margin-right: 20px;">3</div>
+                    <div>
+                        <h3 style="margin: 0 0 10px 0;">Visa Processing</h3>
+                        <p>We assist with student visa (takes 4-6 weeks)</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center; margin-bottom: 30px;">
+                    <div style="background: var(--primary); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.5rem; flex-shrink: 0; margin-right: 20px;">4</div>
+                    <div>
+                        <h3 style="margin: 0 0 10px 0;">Fly to Tajikistan</h3>
+                        <p>Complete university enrollment and start your MBBS</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;" class="animate delay-3">
+                <h3>Eligibility Criteria</h3>
+                <p style="max-width: 700px; margin: 20px auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                    <strong>Academic:</strong> 50% in PCB in 12th grade (40% for SC/ST/OBC) | 
+                    <strong>Age:</strong> Minimum 17 years | 
+                    <strong>NEET:</strong> Qualifying score required
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="animate">Start Your Medical Journey Today!</h2>
+            <p class="animate delay-1" style="margin-bottom: 30px;">Our expert counselors will guide you through the entire admission process</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card animate delay-1">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Call Us</h3>
+                    <p>+91-XXXXXXXXXX</p>
+                    <p>Monday to Saturday, 9AM - 6PM</p>
+                </div>
+                
+                <div class="contact-card animate delay-2">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>admissions@universaledu.com</p>
+                    <p>Response within 24 hours</p>
+                </div>
+                
+                <div class="contact-card animate delay-3">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>123 Education Tower, Medical Road</p>
+                    <p>New Delhi, India - 110001</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px;" class="animate delay-1">
+                <a href="#contact" class="cta-button" style="background: var(--accent); color: var(--dark);">Apply Now for 2024 Intake</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3 class="animate">Universal Education</h3>
+            <p class="animate delay-1" style="margin-top: 20px;">Your trusted partner for medical education abroad since 2010</p>
+            
+            <div class="footer-links animate delay-2">
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">MBBS in Tajikistan</a>
+                <a href="#">MBBS in Russia</a>
+                <a href="#">Other Countries</a>
+                <a href="#">Contact</a>
+            </div>
+            
+            <div class="social-icons animate delay-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <p class="animate delay-1" style="margin-top: 40px;">&copy; 2023 Universal Education. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master in Surgery (MS) - Universal Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== Global Styles ===== */
+        :root {
+            --primary: #0056b3;
+            --accent: #ff6b6b;
+            --dark: #333;
+            --light: #fff;
+            --gray: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ===== Header & Navigation (Same as Homepage) ===== */
+        /* (Include your existing header CSS here) */
+
+        /* ===== Hero Section ===== */
+        .hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.8)), 
+                        url('https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ===== MS Program Section ===== */
+        .program-section {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .program-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .program-card {
+            background: var(--gray);
+            border-radius: 10px;
+            padding: 2rem;
+            width: 30%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .program-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .program-card ul {
+            list-style: none;
+        }
+
+        .program-card ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .program-card ul li::before {
+            content: "✓";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        /* ===== Why Choose MS? Section ===== */
+        .why-choose {
+            background: var(--primary);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: scale(1.05);
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        /* ===== Universities Section ===== */
+        .universities {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+
+        .university-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .university-logo {
+            width: 150px;
+            height: 100px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+
+        .university-logo:hover {
+            filter: grayscale(0%);
+        }
+
+        /* ===== CTA Section ===== */
+        .cta-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #ff5252;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-icons {
+            margin-bottom: 2rem;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .program-card {
+                width: 100%;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (Same as Homepage) -->
+    <header>
+        <!-- Your existing header code here -->
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Master in Surgery (MS)</h1>
+            <p>Become a skilled surgeon with globally recognized training from top medical universities. Expert guidance for admissions, scholarships, and career growth.</p>
+        </div>
+    </section>
+
+    <!-- MS Program Details -->
+    <section class="program-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>MS Specializations</h2>
+                <p>Choose from various surgical disciplines and gain hands-on training in world-class hospitals.</p>
+            </div>
+            <div class="program-details">
+                <div class="program-card">
+                    <h3>General Surgery</h3>
+                    <ul>
+                        <li>3-5 years program</li>
+                        <li>Hands-on clinical training</li>
+                        <li>Internship in affiliated hospitals</li>
+                        <li>Globally recognized degree</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <h3>Orthopedic Surgery</h3>
+                    <ul>
+                        <li>Specialized in bone & joint surgery</li>
+                        <li>Advanced surgical techniques</li>
+                        <li>Research opportunities</li>
+                        <li>International faculty</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <h3>Neurosurgery</h3>
+                    <ul>
+                        <li>Focus on brain & spinal surgeries</li>
+                        <li>High-tech simulation training</li>
+                        <li>Fellowship options</li>
+                        <li>Global job placements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose MS? -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Pursue MS with Us?</h2>
+                <p>We provide end-to-end support for your surgical career journey.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Recognition</h3>
+                    <p>Degrees recognized by WHO, MCI, and international medical councils.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Affordable Fees</h3>
+                    <p>Low-cost education with scholarship opportunities.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Expert Faculty</h3>
+                    <p>Learn from renowned surgeons with decades of experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Universities -->
+    <section class="universities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Partner Universities</h2>
+                <p>We collaborate with the best medical institutions worldwide.</p>
+            </div>
+            <div class="university-logos">
+                <img src="https://via.placeholder.com/150x100?text=Harvard+Medical" alt="Harvard Medical" class="university-logo">
+                <img src="https://via.placeholder.com/150x100?text=Johns+Hopkins" alt="Johns Hopkins" class="university-logo">
+                <img src="https://via.placeholder.com/150x100?text=Oxford+Medical" alt="Oxford Medical" class="university-logo">
+                <img src="https://via.placeholder.com/150x100?text=Stanford+Medicine" alt="Stanford Medicine" class="university-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container cta-content">
+            <h2>Ready to Become a Master Surgeon?</h2>
+            <p>Contact us for free counseling and admission guidance.</p>
+            <a href="./contact.html" class="cta-btn">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2023 Universal Education. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript (Same as Homepage) -->
+    <script>
+        // Your existing JS code here
+    </script>
+</body>
+</html>

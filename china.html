@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS in China | World-Class Medical Education</title>
+    <style>
+        :root {
+            --primary: #1a5f9c;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #34495e;
+            --white: #ffffff;
+        }
+        
+        /* Hero Section */
+        .mbbs-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #2980b9 100%);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mbbs-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.15;
+            z-index: 1;
+        }
+        
+        .mbbs-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .mbbs-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .mbbs-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            background-color: #c0392b;
+        }
+        
+        /* Why Choose Section */
+        .why-choose {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .feature-card p {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Universities Section */
+        .universities {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .university-slider {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .university-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin: 15px;
+        }
+        
+        .university-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .university-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .university-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .university-card:hover .university-img img {
+            transform: scale(1.05);
+        }
+        
+        .university-info {
+            padding: 25px;
+        }
+        
+        .university-info h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .university-info p {
+            color: var(--text);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .university-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Admission Process */
+        .admission-process {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .process-steps {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            height: 100%;
+            width: 4px;
+            background-color: var(--primary);
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-right: 30px;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+        
+        .step-content {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            flex-grow: 1;
+        }
+        
+        .step-content h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .step-content p {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 15px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(26, 95, 156, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            background-color: var(--white);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: #f0f4f8;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            background-color: var(--white);
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--accent) 0%, #c0392b 100%);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .white-button {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--accent);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .white-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            background-color: #f8f9fa;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mbbs-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .process-steps::before {
+                left: 25px;
+            }
+            
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                margin-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="mbbs-hero">
+        <div class="mbbs-hero-content">
+            <h1>MBBS in China</h1>
+            <p>World-class medical education at affordable costs with globally recognized degrees. Study at China's top medical universities with English-medium instruction and excellent clinical exposure.</p>
+            <a href="#contact" class="cta-button">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Study MBBS in China?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>World-Class Education</h3>
+                    <p>Chinese medical universities are recognized by WHO, MCI, and other international medical councils with state-of-the-art facilities and curriculum.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Affordable Tuition</h3>
+                    <p>Cost-effective medical education compared to Western countries with lower living expenses and scholarship opportunities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>English Medium</h3>
+                    <p>All medical programs taught entirely in English with Chinese language classes included for better patient interaction.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏥</div>
+                    <h3>Clinical Exposure</h3>
+                    <p>Extensive hands-on training in affiliated hospitals with diverse patient cases and modern medical equipment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Global Recognition</h3>
+                    <p>Degrees recognized by WHO, MCI, PMDC, ECFMG, FAIMER, allowing graduates to practice worldwide after clearing respective licensing exams.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏛️</div>
+                    <h3>Modern Infrastructure</h3>
+                    <p>Advanced laboratories, digital libraries, smart classrooms, and comfortable hostel facilities for international students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Universities Section -->
+    <section class="universities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Top Medical Universities in China</h2>
+            </div>
+            <div class="university-slider">
+                <div class="university-card">
+                    <div class="university-img">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Peking University">
+                    </div>
+                    <div class="university-info">
+                        <h3>Peking University Health Science Center</h3>
+                        <p>Ranked #1 medical school in China with over 100 years of excellence in medical education and research.</p>
+                        <div class="university-meta">
+                            <span>Tuition: $6,500/year</span>
+                            <span>WHO Recognized</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="university-card">
+                    <div class="university-img">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fudan University">
+                    </div>
+                    <div class="university-info">
+                        <h3>Fudan University Shanghai Medical College</h3>
+                        <p>Premier medical institution with strong international collaborations and excellent hospital affiliations.</p>
+                        <div class="university-meta">
+                            <span>Tuition: $7,200/year</span>
+                            <span>MCI Approved</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="university-card">
+                    <div class="university-img">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Zhejiang University">
+                    </div>
+                    <div class="university-info">
+                        <h3>Zhejiang University School of Medicine</h3>
+                        <p>Innovative curriculum with problem-based learning approach and extensive research opportunities.</p>
+                        <div class="university-meta">
+                            <span>Tuition: $5,800/year</span>
+                            <span>ECFMG Listed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Process -->
+    <section class="admission-process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admission Process</h2>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Eligibility Check</h3>
+                        <p>Minimum 70% in PCB in 12th grade, NEET qualification (for Indian students), and age between 17-25 years.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Application Submission</h3>
+                        <p>Submit academic documents, passport copy, application form, and personal statement to your chosen university.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Admission Letter</h3>
+                        <p>Receive admission offer within 2-4 weeks after document verification and application review.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>JW202 Visa Application</h3>
+                        <p>University issues JW202 form for student visa application at Chinese embassy in your country.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Travel & Registration</h3>
+                        <p>Complete university registration, medical check-up, and residence permit formalities upon arrival in China.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Student Testimonials</h2>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>Studying MBBS at Zhejiang University has been an incredible experience. The professors are world-class, the facilities are excellent, and the clinical exposure from third year is unmatched. I feel fully prepared for my medical career.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Priya Sharma">
+                    </div>
+                    <div class="author-info">
+                        <h4>Priya Sharma</h4>
+                        <p>5th Year MBBS Student</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>The quality of education at Peking University is exceptional. What I appreciate most is the emphasis on practical skills. We start hospital rotations early, which gives us confidence in patient interaction and clinical diagnosis.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmed Khan">
+                    </div>
+                    <div class="author-info">
+                        <h4>Ahmed Khan</h4>
+                        <p>Alumni, Now Resident Doctor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Is MBBS from China valid in my home country?</div>
+                    <div class="faq-answer">
+                        <p>Yes, Chinese medical degrees are recognized by WHO and most medical councils worldwide including MCI (India), PMDC (Pakistan), GMC (UK), etc. Graduates need to pass the respective licensing examination (like FMGE, USMLE, PLAB) to practice in their home country.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is the duration of MBBS in China?</div>
+                    <div class="faq-answer">
+                        <p>The MBBS program in China is 6 years duration, including 1 year of internship. Some universities offer 5+1 year programs where the internship can be done in your home country.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are there any scholarships available?</div>
+                    <div class="faq-answer">
+                        <p>Yes, the Chinese government and universities offer various scholarships like CSC Scholarship, Provincial Scholarships, and University Scholarships covering 20-100% of tuition fees based on academic merit.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How is the accommodation for international students?</div>
+                    <div class="faq-answer">
+                        <p>Universities provide comfortable hostel accommodation with options for single or shared rooms. Facilities typically include WiFi, laundry, common kitchen, study rooms, and 24/7 security.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is the medium of instruction?</div>
+                    <div class="faq-answer">
+                        <p>All MBBS programs for international students are taught entirely in English. Chinese language classes are mandatory in first 2 years to help with hospital interactions and daily life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Medical Journey in China?</h2>
+            <p>Our expert counselors will guide you through the entire admission process - from university selection to visa assistance. Begin your application today!</p>
+            <a href="#contact" class="white-button">Get Free Consultation</a>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+                
+                // Close other open FAQs
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // You would add slider functionality here for the universities section
+        // This would typically use a library like Swiper.js for production
+    </script>
+</body>
+</html>

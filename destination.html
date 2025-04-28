@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Destinations | Universal Education Consultants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== Global Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== Header & Navigation ===== */
+        header {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #93c5fd;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1526779259212-939e64788e3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #2563eb;
+            transform: translateY(-3px);
+        }
+
+        /* ===== Destinations Section ===== */
+        .destinations {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .destination-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .destination-info {
+            padding: 20px;
+        }
+
+        .destination-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+        }
+
+        .destination-info p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .destination-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .destination-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* ===== Why Choose Section ===== */
+        .why-choose {
+            background: #f0f9ff;
+            padding: 80px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: #3b82f6;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+        }
+
+        .feature-card p {
+            color: #64748b;
+        }
+
+        /* ===== CTA Section ===== */
+        .cta {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #cbd5e1;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: #3b82f6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/UNIVERSALLOGO.png" alt="Universal Education Logo" style="height: 40px;">
+            </a>
+            <div class="nav-links">
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About Us</a>
+                <a href="./services.html">Services</a>
+                <a href="./destination.html">Destinations</a>
+                <a href="./contact.html">Contact</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Explore Top Medical Study Destinations</h1>
+                <p>Discover the best countries to pursue your MBBS dream with world-class education at affordable costs.</p>
+                <a href="contact.html" class="btn">Get Free Counseling</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Study Destinations</h2>
+                <p>We partner with top-ranked medical universities across the globe to provide you with the best options.</p>
+            </div>
+            <div class="destinations-grid">
+                <!-- Destination 1 -->
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Russia" class="destination-img">
+                    <div class="destination-info">
+                        <h3>Russia</h3>
+                        <p>Renowned for advanced medical education with affordable tuition fees and globally recognized degrees.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-university"></i> 30+ Universities</span>
+                            <span><i class="fas fa-rupee-sign"></i> Fees: ₹15-25L</span>
+                        </div>
+                        <a href="#" class="btn">Explore Russia</a>
+                    </div>
+                </div>
+
+                <!-- Destination 2 -->
+                <div class="destination-card">
+                    <img src="assets/georgia.jpg" alt="Georgia" class="destination-img">
+                    <div class="destination-info">
+                        <h3>Georgia</h3>
+                        <p>English-taught programs, US-based curriculum, and high FMGE passing rates for Indian students.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-university"></i> 15+ Universities</span>
+                            <span><i class="fas fa-rupee-sign"></i> Fees: ₹20-30L</span>
+                        </div>
+                        <a href="#" class="btn">Explore Philippines</a>
+                    </div>
+                </div>
+
+                <!-- Destination 3 -->
+                <div class="destination-card">
+                    <img src="assets/kyzrkystan.jpg" alt="Kyrgyzstan" class="destination-img">
+                    <div class="destination-info">
+                        <h3>Kyrgyzstan</h3>
+                        <p>European-standard education with low costs and excellent clinical exposure.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-university"></i> 20+ Universities</span>
+                            <span><i class="fas fa-rupee-sign"></i> Fees: ₹18-28L</span>
+                        </div>
+                        <a href="#" class="btn">Explore Ukraine</a>
+                    </div>
+                </div>
+
+                <!-- Destination 4 -->
+                <div class="destination-card">
+                    <img src="assets/nepal.jpg" alt="Nepal" class="destination-img">
+                    <div class="destination-info">
+                        <h3>Nepal</h3>
+                        <p>World-class infrastructure with WHO-recognized medical programs.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-university"></i> 25+ Universities</span>
+                            <span><i class="fas fa-rupee-sign"></i> Fees: ₹25-40L</span>
+                        </div>
+                        <a href="#" class="btn">Explore China</a>
+                    </div>
+                </div>
+
+                <!-- Destination 5 -->
+                <div class="destination-card">
+                    <img src="assets/kazakastan.jpg" alt="Kazakhstan" class="destination-img">
+                    <div class="destination-info">
+                        <h3>kazakastan</h3>
+                        <p>Affordable European education with English-medium programs.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-university"></i> 10+ Universities</span>
+                            <span><i class="fas fa-rupee-sign"></i> Fees: ₹20-35L</span>
+                        </div>
+                        <a href="#" class="btn">Explore Georgia</a>
+                    </div>
+                </div>
+
+                <!-- Destination 6 -->
+                <div class="destination-card">
+                    <img src="assets/uzbekistan.webp" alt="Uzbekistan" class="destination-img">
+                    <div class="destination-info">
+                        <h3>Uzbekistan</h3>
+                        <p>Low-cost medical education with good FMGE passing rates.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-university"></i> 8+ Universities</span>
+                            <span><i class="fas fa-rupee-sign"></i> Fees: ₹12-20L</span>
+                        </div>
+                        <a href="#" class="btn">Explore Kyrgyzstan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose These Destinations?</h2>
+                <p>Key benefits of studying medicine in our partner countries</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Globally Recognized Degrees</h3>
+                    <p>WHO & MCI approved universities with worldwide acceptance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Affordable Tuition</h3>
+                    <p>Costs 60-80% lower than private Indian medical colleges.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>English Medium</h3>
+                    <p>No language barrier for international students.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Clinical Exposure</h3>
+                    <p>Early patient contact and hands-on training.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Begin Your Medical Journey Abroad?</h2>
+            <p>Book a free counseling session with our experts to choose the best destination for you.</p>
+            <a href="contact.html" class="btn">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Universal Education Consultants</h3>
+                    <p>Your trusted partner for medical education abroad since 2000. We've helped 5000+ students achieve their dreams.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="destinations.html">Destinations</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <a href="tel:+91 87937 17804"><i class="fas fa-phone"></i> +91 87937 17804</a>
+                    <a href="tel:+91 98222 40964"><i class="fas fa-phone"></i> +91 98222 40964</a>
+                    <a href="mailto:info@universal.edu"><i class="fas fa-envelope"></i> info@universalcolleges.com</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> 201/A, Shri Sai Prasad Enclave,opp. Axis Bank, Near Sai Mandir, Wardha Road, Nagpur, Maharashtra 440015</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Universal Education Consultants. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

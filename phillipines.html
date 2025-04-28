@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS in Philippines - World-Class Medical Education | Universal Edu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c5aa0;
+            --secondary: #e74c3c;
+            --accent: #f39c12;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --text: #333;
+            --text-light: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f5f7fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), #1a3a6e);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581092921461-39b2f2b8a450?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.6);
+            background-color: #e67e22;
+        }
+        
+        /* Why Choose Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Universities Table */
+        .table-container {
+            overflow-x: auto;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #f1f5fd;
+        }
+        
+        /* Eligibility Section */
+        .eligibility-criteria {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+        
+        .criteria-list {
+            margin-top: 20px;
+        }
+        
+        .criteria-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .criteria-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Process Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-step {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-step::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -12px;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Cost Section */
+        .cost-table {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 40px 0;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.05);
+            font-size: 60px;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            z-index: 0;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary), #1a3a6e);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: var(--accent);
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .submit-btn {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: #e67e22;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-step {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-step::after {
+                left: 21px;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Universal Edu</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Universities</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="container">
+            <h1>MBBS in Philippines</h1>
+            <p>Your Gateway to a World-Class Medical Degree with Global Recognition</p>
+            <a href="./contact.html" class="cta-button">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Study MBBS in Philippines?</h2>
+            </div>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                The Philippines is one of the top destinations for Indian and international students seeking a high-quality, affordable, and globally recognized MBBS degree. With English as the medium of instruction, world-class universities, and a curriculum similar to the US medical education system, the Philippines provides an excellent pathway to becoming a successful doctor.
+            </p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Affordable Fees</h3>
+                    <p>No donation or capitation fees with transparent fee structure that's much lower than Indian private colleges.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Recognition</h3>
+                    <p>Degrees approved by WHO, NMC (MCI), ECFMG, FAIMER, making you eligible to practice worldwide.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>US-Based Curriculum</h3>
+                    <p>Prepares students for USMLE, PLAB, and NEXT exams with teaching methods matching international standards.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>English Medium</h3>
+                    <p>No language barrier as English is the primary medium of instruction and communication.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>High Success Rate</h3>
+                    <p>Excellent FMGE/NEXT passing rates compared to many other foreign medical universities.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Indian Community</h3>
+                    <p>Large Indian student population making adaptation easier with Indian food options available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Universities Section -->
+    <section class="section" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Top Medical Universities in Philippines</h2>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>University</th>
+                            <th>Location</th>
+                            <th>Recognition</th>
+                            <th>Duration</th>
+                            <th>Approx. Fees (USD/Year)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>University of the Philippines Manila</strong></td>
+                            <td>Manila</td>
+                            <td>WHO, NMC, ECFMG</td>
+                            <td>5.5 Years</td>
+                            <td>$5,000 - $7,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ateneo de Manila University</strong></td>
+                            <td>Manila</td>
+                            <td>WHO, NMC, FAIMER</td>
+                            <td>5.5 Years</td>
+                            <td>$6,000 - $8,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Davao Medical School Foundation</strong></td>
+                            <td>Davao City</td>
+                            <td>WHO, NMC, ECFMG</td>
+                            <td>5.5 Years</td>
+                            <td>$4,500 - $6,500</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cebu Doctors' University</strong></td>
+                            <td>Cebu</td>
+                            <td>WHO, NMC, ECFMG</td>
+                            <td>5.5 Years</td>
+                            <td>$5,000 - $7,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>University of Santo Tomas</strong></td>
+                            <td>Manila</td>
+                            <td>WHO, NMC, FAIMER</td>
+                            <td>5.5 Years</td>
+                            <td>$6,000 - $8,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Eligibility Criteria</h2>
+            </div>
+            
+            <div class="eligibility-criteria">
+                <h3 style="color: var(--primary); margin-bottom: 20px;">Requirements for MBBS in Philippines:</h3>
+                <ul class="criteria-list">
+                    <li><strong>Academic Qualification:</strong> 10+2 with PCB (Physics, Chemistry, Biology) and at least 50% marks</li>
+                    <li><strong>NEET Qualification:</strong> Mandatory for Indian students (since 2018)</li>
+                    <li><strong>English Proficiency:</strong> No IELTS/TOEFL required (Medium of instruction is English)</li>
+                    <li><strong>Age Limit:</strong> Minimum 17 years at the time of admission</li>
+                    <li><strong>Documents Required:</strong> Passport, Academic Certificates, NEET Scorecard, Birth Certificate, Medical Certificate</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Process -->
+    <section class="section" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admission Process</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-step left">
+                    <div class="timeline-content">
+                        <h3>Step 1: Application Submission</h3>
+                        <p>Submit scanned copies of your academic documents, passport, and NEET scorecard to the university or through our portal.</p>
+                    </div>
+                </div>
+                <div class="timeline-step right">
+                    <div class="timeline-content">
+                        <h3>Step 2: Admission Letter</h3>
+                        <p>Receive offer letter from the university within 2-4 weeks after document verification.</p>
+                    </div>
+                </div>
+                <div class="timeline-step left">
+                    <div class="timeline-content">
+                        <h3>Step 3: Visa Processing</h3>
+                        <p>Apply for student visa (9F Visa) with our guidance - takes approximately 4-6 weeks.</p>
+                    </div>
+                </div>
+                <div class="timeline-step right">
+                    <div class="timeline-content">
+                        <h3>Step 4: Travel & Enrollment</h3>
+                        <p>Fly to Philippines and complete university enrollment formalities to start your MBBS journey!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost of Study -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cost of Studying MBBS in Philippines</h2>
+            </div>
+            
+            <p style="text-align: center; margin-bottom: 30px;">(Much cheaper than Indian private medical colleges!)</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Expense</th>
+                            <th>Approx. Cost (Per Year)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tuition Fees</strong></td>
+                            <td>$4,000 - $8,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hostel & Accommodation</strong></td>
+                            <td>$1,000 - $2,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Food & Living Expenses</strong></td>
+                            <td>$1,500 - $2,500</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Miscellaneous</strong></td>
+                            <td>$500 - $1,000</td>
+                        </tr>
+                        <tr style="background-color: #e9f5ff;">
+                            <td><strong>Total Estimated Cost</strong></td>
+                            <td><strong>$7,000 - $13,000/Year</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Opportunities -->
+    <section class="section" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Career Opportunities</h2>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <h3>Practice in India</h3>
+                    <p>Clear NEXT (FMGE) and work in India after completing your MBBS from Philippines.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-flag-usa"></i>
+                    </div>
+                    <h3>US Medical Licensure</h3>
+                    <p>Appear for USMLE and practice in the USA after completing your MBBS.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-flag-uk"></i>
+                    </div>
+                    <h3>UK Opportunities</h3>
+                    <p>Qualify for PLAB and work in the UK healthcare system.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Postgraduate (MD/MS)</h3>
+                    <p>Pursue specialization in Philippines, USA, Europe or other countries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Student Testimonials</h2>
+            </div>
+            
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Studying MBBS in the Philippines was the best decision! The education is top-notch, and the exposure is global. The professors are highly qualified and the clinical rotations give excellent practical experience."</p>
+                        <p class="testimonial-author">– Rohan Sharma, Batch of 2022</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Affordable fees, no donation, and a great learning environment. The Philippines has a similar education system to the US which helps in preparing for USMLE. Highly recommended!"</p>
+                        <p class="testimonial-author">– Priya Patel, Batch of 2021</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"The Indian community here is very supportive. We have Indian food options and cultural events that make us feel at home while pursuing our medical dreams abroad."</p>
+                        <p class="testimonial-author">– Arjun Mehta, Batch of 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Contact Us Today!</h2>
+                <p style="color: rgba(255, 255, 255, 0.8); margin-top: 20px;">Ready to start your MBBS journey in the Philippines? Get expert guidance on admissions, scholarships, and visa processing!</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>manager.universaledu@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>+91-87937 17804</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h3>Website</h3>
+                            <p>www.mbbsuniversal.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Working Hours</h3>
+                            <p>Monday - Saturday: 10AM to 67PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" rows="4" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="padding: 60px 0; text-align: center; background: linear-gradient(135deg, #f39c12, #e67e22); color: white;">
+        <div class="container">
+            <h2 style="font-size: 36px; margin-bottom: 20px;">Your Dream of Becoming a Doctor Starts Here!</h2>
+            <p style="font-size: 20px; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">Apply now for MBBS in Philippines and kickstart your medical career with global opportunities.</p>
+            <a href="./contact.html" class="cta-button" style="background-color: white; color: #e67e22;">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Universal Edu</h3>
+                    <p style="color: #bbb; margin-bottom: 20px;">Your trusted partner for overseas medical education since 2010.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./mbbsabroad.html">MBBS Abroad</a></li>
+                        <li><a href="#">Universities</a></li>
+                        <li><a href="./destination.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Study Destinations</h3>
+                    <ul>
+                        <li><a href="#">MBBS in Philippines</a></li>
+                        <li><a href="#">MBBS in Russia</a></li>
+                        <li><a href="#">MBBS in Ukraine</a></li>
+                        <li><a href="#">MBBS in Georgia</a></li>
+                        <li><a href="#">MBBS in Kazakhstan</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Visa Guidance</a></li>
+                        <li><a href="#">Scholarships</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Universal Edu. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

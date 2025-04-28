@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS in Ukraine - World-Class Medical Education | Universal Edu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0057B7; /* Ukrainian blue */
+            --secondary: #FFD700; /* Ukrainian yellow */
+            --accent: #E41E26; /* Red for accents */
+            --light: #F8F9FA;
+            --dark: #212529;
+            --text: #333333;
+            --text-light: #6C757D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), #003D82);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, #f5f7fa);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: var(--accent);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+            color: white;
+        }
+        
+        .cta-button:hover::before {
+            width: 100%;
+        }
+        
+        /* Why Choose Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Universities Table */
+        .table-container {
+            overflow-x: auto;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            background-color: white;
+            padding: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #f1f5fd;
+        }
+        
+        /* Quick Facts */
+        .quick-facts {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .fact-item {
+            padding: 20px;
+        }
+        
+        .fact-icon {
+            font-size: 40px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .fact-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .fact-item p {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        /* Indian Community */
+        .community-section {
+            background-color: #FFF8E1;
+            padding: 60px 0;
+            margin: 40px 0;
+            border-top: 3px solid var(--secondary);
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        .community-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .community-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .community-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .community-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Cost Comparison */
+        .comparison-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 40px 0;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-step {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-step::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -12px;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Career Opportunities */
+        .career-opportunities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .career-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .career-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .career-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.05);
+            font-size: 60px;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            z-index: 0;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary), #003D82);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: var(--secondary);
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            background-color: var(--secondary);
+            color: var(--dark);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--secondary), #FFC600);
+            color: var(--dark);
+        }
+        
+        .final-cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            color: var(--dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-step {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-step::after {
+                left: 21px;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+            
+            .community-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Universal Edu</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">MBBS Abroad</a></li>
+                    <li><a href="#">Countries</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="container">
+            <h1>MBBS in Ukraine</h1>
+            <p>World-Class Medical Education at European Standards with Affordable Costs</p>
+            <a href="#contact" class="cta-button">Apply Now for 2024 Intake</a>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Ukraine for MBBS?</h2>
+            </div>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                Ukraine has emerged as one of the top destinations for Indian students pursuing MBBS abroad. With globally recognized universities, affordable tuition fees, and European standard education, Ukraine offers an excellent pathway to becoming a successful doctor.
+            </p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Affordable Fees</h3>
+                    <p>No donation or capitation fees. Save 50-60% compared to Indian private colleges.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Recognition</h3>
+                    <p>Degrees approved by WHO, NMC, ECFMG, FAIMER - eligible to practice worldwide.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>European Standards</h3>
+                    <p>Education following EU directives with modern teaching methodologies.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>English Medium</h3>
+                    <p>Complete MBBS course taught in English with no language barrier.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Safe Environment</h3>
+                    <p>Ukraine is safe for Indian students with welcoming local communities.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>Advanced Facilities</h3>
+                    <p>Modern hospitals and labs for excellent clinical exposure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Universities Section -->
+    <section class="section" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Top Medical Universities in Ukraine</h2>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>University</th>
+                            <th>Location</th>
+                            <th>Established</th>
+                            <th>Fees (Annual)</th>
+                            <th>Recognition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Bogomolets National Medical University</strong></td>
+                            <td>Kyiv</td>
+                            <td>1841</td>
+                            <td>$5,500</td>
+                            <td>WHO, NMC, ECFMG</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kharkiv National Medical University</strong></td>
+                            <td>Kharkiv</td>
+                            <td>1805</td>
+                            <td>$4,800</td>
+                            <td>WHO, NMC, FAIMER</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lviv National Medical University</strong></td>
+                            <td>Lviv</td>
+                            <td>1784</td>
+                            <td>$5,200</td>
+                            <td>WHO, NMC, ECFMG</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Danylo Halytsky Lviv Medical University</strong></td>
+                            <td>Lviv</td>
+                            <td>1773</td>
+                            <td>$4,500</td>
+                            <td>WHO, NMC, FAIMER</td>
+                        </tr>
+                        <tr>
+                            <td><strong>V.N. Karazin Kharkiv National University</strong></td>
+                            <td>Kharkiv</td>
+                            <td>1804</td>
+                            <td>$5,000</td>
+                            <td>WHO, NMC, ECFMG</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Facts -->
+    <section class="section">
+        <div class="container">
+            <div class="quick-facts">
+                <div class="facts-grid">
+                    <div class="fact-item">
+                        <div class="fact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Duration</h3>
+                        <p>6 Years</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <div class="fact-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>Medium</h3>
+                        <p>English</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <div class="fact-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Intakes</h3>
+                        <p>Sep & Feb</p>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <div class="fact-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>NEET Required</h3>
+                        <p>Yes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Indian Community -->
+    <section class="community-section">
+        <div class="container">
+            <div class="community-content">
+                <div class="community-text">
+                    <h2 style="color: var(--primary); margin-bottom: 20px;">Why Indian Students Love Ukraine?</h2>
+                    <ul style="list-style: none; font-size: 18px;">
+                        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                            <i class="fas fa-utensils" style="position: absolute; left: 0; color: var(--accent);"></i>
+                            <strong>100+ Indian Restaurants</strong> in major cities
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                            <i class="fas fa-users" style="position: absolute; left: 0; color: var(--accent);"></i>
+                            <strong>Indian Student Communities</strong> in every university
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                            <i class="fas fa-flag" style="position: absolute; left: 0; color: var(--accent);"></i>
+                            <strong>Diwali & Holi Celebrations</strong> organized annually
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                            <i class="fas fa-plane" style="position: absolute; left: 0; color: var(--accent);"></i>
+                            <strong>Direct Flights</strong> from India to Kyiv
+                        </li>
+                        <li style="padding-left: 30px; position: relative;">
+                            <i class="fas fa-home" style="position: absolute; left: 0; color: var(--accent);"></i>
+                            <strong>Indian Mess Facilities</strong> available in hostels
+                        </li>
+                    </ul>
+                </div>
+                <div class="community-image">
+                    <img src="https://images.unsplash.com/photo-1600188769045-bc602cdb61e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Indian students in Ukraine">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Comparison -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cost Comparison: Ukraine vs India</h2>
+            </div>
+            
+            <div class="comparison-section">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Expense</th>
+                                <th>Ukraine (Annual)</th>
+                                <th>India Private College (Annual)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tuition Fees</strong></td>
+                                <td>$4,000 - $6,000</td>
+                                <td>₹15-25 Lakhs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hostel</strong></td>
+                                <td>$800 - $1,200</td>
+                                <td>₹1-2 Lakhs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Food</strong></td>
+                                <td>$1,200 - $1,800</td>
+                                <td>₹1-1.5 Lakhs</td>
+                            </tr>
+                            <tr style="background-color: #FFF8E1; font-weight: 700;">
+                                <td><strong>Total</strong></td>
+                                <td><strong>$6,000-$9,000</strong></td>
+                                <td><strong>₹17-28 Lakhs</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="text-align: center; margin-top: 20px; font-size: 18px; color: var(--accent); font-weight: 600;">
+                    Savings of 50-60% compared to Indian private colleges!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Process -->
+    <section class="section" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admission Process Timeline</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-step left">
+                    <div class="timeline-content">
+                        <h3>Step 1: Document Submission</h3>
+                        <p>Submit scanned copies of your 10th/12th mark sheets, NEET scorecard, passport, and other required documents.</p>
+                    </div>
+                </div>
+                <div class="timeline-step right">
+                    <div class="timeline-content">
+                        <h3>Step 2: Invitation Letter</h3>
+                        <p>Receive official admission letter from the university within 7-10 working days.</p>
+                    </div>
+                </div>
+                <div class="timeline-step left">
+                    <div class="timeline-content">
+                        <h3>Step 3: Visa Processing</h3>
+                        <p>We assist with student visa application which typically takes 10-15 working days.</p>
+                    </div>
+                </div>
+                <div class="timeline-step right">
+                    <div class="timeline-content">
+                        <h3>Step 4: Departure & Enrollment</h3>
+                        <p>Fly to Ukraine and complete university enrollment formalities to begin your MBBS journey!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; font-style: italic; margin-top: 30px;">
+                Total Process Time: 4-6 Weeks
+            </p>
+        </div>
+    </section>
+
+    <!-- Career Opportunities -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Career Opportunities After MBBS in Ukraine</h2>
+            </div>
+            
+            <div class="career-opportunities">
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <h3>Practice in India</h3>
+                    <p>Clear NEXT (FMGE) exam and work in India after completing your MBBS from Ukraine.</p>
+                </div>
+                
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-flag-usa"></i>
+                    </div>
+                    <h3>US Residency</h3>
+                    <p>Appear for USMLE exams and pursue residency programs in the USA.</p>
+                </div>
+                
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-flag-uk"></i>
+                    </div>
+                    <h3>UK Opportunities</h3>
+                    <p>Qualify for PLAB certification to practice medicine in the UK.</p>
+                </div>
+                
+                <div class="career-card">
+                    <div class="career-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Postgraduate in Europe</h3>
+                    <p>Pursue MD/MS programs in Ukraine or other European countries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Student Success Stories</h2>
+            </div>
+            
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"I saved ₹40 lakhs by choosing Ukraine over Indian private colleges. The quality of education is excellent with modern facilities and experienced professors."</p>
+                        <p class="testimonial-author">- Rohan Mehta, Bogomolets University (2022)</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Ukrainian universities have world-class labs and hospitals for clinical training. The Indian community here made my transition smooth. Best decision of my life!"</p>
+                        <p class="testimonial-author">- Priya Sharma, Kharkiv Medical University (2021)</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"The European education standard prepared me well for USMLE. I'm now doing my residency in New York after completing MBBS from Ukraine."</p>
+                        <p class="testimonial-author">- Arjun Patel, Lviv Medical University (2019)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Get Free Counseling Today!</h2>
+                <p style="color: rgba(255, 255, 255, 0.8); margin-top: 20px;">Limited Seats Available for September 2024 Intake</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>+91

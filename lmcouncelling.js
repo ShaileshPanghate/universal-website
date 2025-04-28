@@ -27,16 +27,37 @@ faqQuestions.forEach(question => {
     });
 });
 
-// Form Submission
+// Form Submission with WhatsApp Integration
 document.getElementById('counselingForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
     // Get form values
-    const name = this.querySelector('input[type="text"]').value;
-    const phone = this.querySelector('input[type="tel"]').value;
+    const name = document.getElementById('userName').value;
+    const email = document.getElementById('userEmail').value;
+    const phone = document.getElementById('userPhone').value;
+    const country = document.getElementById('preferredCountry').value;
+    const course = document.getElementById('courseInterest').value;
     
-    // Show success message (in real implementation, you would send this to your backend)
-    alert(`Thank you ${name}! Our counselor will call you at ${phone} within 30 minutes.`);
+    // Format message for WhatsApp
+    const message = `New Counseling Request:%0A%0A` +
+                    `*Name:* ${name}%0A` +
+                    `*Email:* ${email}%0A` +
+                    `*Phone:* ${phone}%0A` +
+                    `*Preferred Country:* ${country}%0A` +
+                    `*Course Interested In:* ${course}%0A%0A` +
+                    `Please contact this potential student as soon as possible.`;
+    
+    // Replace with your WhatsApp business number (with country code but remove + or 00)
+    const whatsappNumber = '+918793717804'; // Example: 91 for India, followed by number
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
+    
+    // Show confirmation message
+    alert(`Thank you ${name}! Our counselor will contact you shortly on WhatsApp.`);
     
     // Reset form
     this.reset();

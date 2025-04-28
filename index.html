@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universal Education Consultants | Study Abroad Experts</title>
+    <!-- Favicon links (adjust path if needed) -->
+    <link rel="icon" href="C:\Users\HP\Desktop\universal\assets\fevicon.png" type="image/png">
+    <link rel="shortcut icon" href="C:\Users\HP\Desktop\universal\assets\fevicon.png" type="image/png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* ===== Global Styles ===== */
@@ -110,43 +114,50 @@
             margin: 20px auto 0;
         }
         
-        /* ===== Header Styles ===== */
-        .top-bar {
-            background: var(--dark);
-            color: white;
-            padding: 10px 0;
-            font-size: 14px;
-        }
-        
-        .top-bar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .top-contact a {
-            color: white;
-            text-decoration: none;
-            margin-right: 20px;
-            transition: color 0.3s;
-        }
-        
-        .top-contact a:hover {
-            color: var(--accent);
-        }
-        
-        .top-contact i {
-            margin-right: 5px;
-            color: var(--accent);
-        }
-        
-   /* ===== Header & Navigation Styles ===== */
+        /* ===== Top Bar Styles ===== */
+.top-bar {
+    background: var(--dark);
+    color: white;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-contact a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+
+.top-contact a:hover {
+    color: var(--accent);
+}
+
+.top-contact i {
+    margin-right: 5px;
+    color: var(--accent);
+}
+
+/* ===== Header & Navigation Styles ===== */
 header {
-    background: var(--light);
+    background: var(--light, #fff);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 nav {
@@ -154,6 +165,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    position: relative;
+    z-index: 10; /* Ensure nav appears above other content */
 }
 
 .logo {
@@ -191,9 +204,9 @@ nav {
     margin-left: 25px;
 }
 
-.nav-links > li > a {
+.nav-links a {
     text-decoration: none;
-    color: var(--dark);
+    color: var(--dark, #333);
     font-weight: 600;
     font-size: 16px;
     transition: color 0.3s;
@@ -201,9 +214,296 @@ nav {
     align-items: center;
 }
 
-.nav-links > li > a:hover {
+.nav-links a:hover {
     color: var(--primary);
-} 
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 1000;
+    display: none; /* Ensures it's hidden by default */
+}
+
+.nav-links li:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu li {
+    margin: 0;
+    padding: 8px 20px;
+}
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--dark);
+}
+
+/* ===== Mobile Responsive Styles ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 90px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 90px);
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: none;
+        box-shadow: none;
+        padding-left: 15px;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        background: rgba(0, 0, 0, 0.03);
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    /* Disable hover effects on mobile */
+    .nav-links li:hover .dropdown-menu {
+        display: none;
+    }
+
+    .nav-links li.active .dropdown-menu {
+        display: block;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        z-index: 1000;
+    }
+    
+    /* Prevent body scrolling when menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* ===== Form Popup Styling ===== */
+.form-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.form-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.form-container {
+    padding: 30px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-header .form-logo {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.form-header h3 {
+    color: #2c3e50;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.form-header p {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+.form-group i {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #3498db;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s;
+    background-color: #f9f9f9;
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    outline: none;
+    background-color: white;
+}
+
+.form-group label {
+    position: absolute;
+    top: 15px;
+    left: 45px;
+    color: #999;
+    font-size: 15px;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.form-group input:focus + label,
+.form-group input:valid + label,
+.form-group select:focus + label,
+.form-group select:valid + label {
+    top: -10px;
+    left: 35px;
+    font-size: 12px;
+    background: white;
+    padding: 0 5px;
+    color: #3498db;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #2980b9, #1a252f);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(41, 128, 185, 0.3);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+.form-group:nth-child(5) { animation-delay: 0.5s; }
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 992px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+}
 
 /* ===== Social Links Styles ===== */
 .social-links {
@@ -697,93 +997,248 @@ nav {
   }
 }
         
-        /* ===== Testimonials Section ===== */
-        .testimonials {
-            background: linear-gradient(rgba(0, 86, 164, 0.9), rgba(0, 86, 164, 0.9)), 
-                        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            text-align: center;
-        }
-        
-        .testimonials .section-title h2,
-        .testimonials .section-title p {
-            color: white;
-        }
-        
-        .testimonials .section-title::after {
-            background: var(--accent);
-        }
-        
-        .testimonial-slider {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .testimonial-item {
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            margin: 0 15px;
-            backdrop-filter: blur(5px);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .testimonial-text::before,
-        .testimonial-text::after {
-            content: '"';
-            font-size: 50px;
-            color: rgba(255, 255, 255, 0.2);
-            position: absolute;
-        }
-        
-        .testimonial-text::before {
-            top: -20px;
-            left: -10px;
-        }
-        
-        .testimonial-text::after {
-            bottom: -40px;
-            right: -10px;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .author-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-            border: 3px solid var(--accent);
-        }
-        
-        .author-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-        
-        .author-info p {
-            color: #ddd;
-            font-size: 14px;
-        }
+   /* ===== Testimonials Section ===== */
+.testimonials {
+    background: linear-gradient(rgba(0, 86, 164, 0.9), rgba(0, 86, 164, 0.9)), 
+                url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.testimonials .section-title {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.testimonials .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.testimonials .divider {
+    width: 80px;
+    height: 4px;
+    background: var(--accent);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.testimonial-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    text-align: center;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.student-photo {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.student-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.university-badge {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 2px solid #fff;
+    padding: 5px;
+}
+
+.university-badge img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.testimonial-content {
+    position: relative;
+    color: white;
+}
+
+.quote-icon {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.1);
+    line-height: 1;
+}
+
+.testimonial-text {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+}
+
+.testimonial-text::before,
+.testimonial-text::after {
+    content: '"';
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+}
+
+.testimonial-text::before {
+    top: -20px;
+    left: -10px;
+}
+
+.testimonial-text::after {
+    bottom: -40px;
+    right: -10px;
+}
+
+.student-info h4 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.student-info p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.rating {
+    color: #f39c12;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.rating span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .testimonial-cards {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    
+    .testimonials {
+        background-attachment: scroll;
+        padding: 60px 0;
+    }
+    
+    .testimonials .section-title {
+        font-size: 2rem;
+    }
+    
+    .testimonials .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .student-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .university-badge {
+        width: 50px;
+        height: 50px;
+        bottom: -5px;
+        right: -5px;
+    }
+}
+
+/* Slider fallback styles (hidden by default) */
+.testimonial-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    display: none;
+}
+
+.testimonial-item {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin: 0 15px;
+    backdrop-filter: blur(5px);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.author-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    border: 3px solid var(--accent);
+}
+
+.author-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
         
         /* ===== Partners Section ===== */
         .partners {
@@ -994,6 +1449,8 @@ nav {
             from { opacity: 0; }
             to { opacity: 1; }
         } 
+
+        
     </style>
 </head>
 <body>
@@ -1001,9 +1458,11 @@ nav {
     <div class="top-bar">
         <div class="container">
             <div class="top-contact">
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Shri Sai Prasad Enclave,Near Sai Mandir, Nagpur   </a>
+                <a href="tel:+91 87937 17804"><i class="fas fa-phone-alt"></i> +91 87937 17804</a>
                 <a href="tel:+91 95455 66777"><i class="fas fa-phone-alt"></i> +91 95455 66777</a>
-                <a href="mailto:Manager.universaledu@gmail.com"><i class="fas fa-envelope"></i> Manager.universaledu@gmail.com</a>
-                <a href="https://www.universaleducation.com" target="_blank">Visit My Website</a>
+                <a href="mailto:manager.universaledu@gmail.com"><i class="fas fa-envelope"></i> manager.universaledu@gmail.com</a>
+                <a href="https://www.universaleducation.com" target="_blank"></a>
             </div>
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1013,69 +1472,220 @@ nav {
         </div>
     </div>
 
-   <!-- Header -->
-<header>
+ <!-- Header -->
+ <header>
     <div class="container">
         <nav>
-            <a href="#" class="logo">
+            <a href="#" class="logo" id="logo">
                 <img src="./assets/UNIVERSALLOGO.png" alt="Universal Education Logo">
                 <div class="logo-text"><span></span></div>
             </a>
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li>
-                        <a href="#">Study Abroad <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">MBBS Abroad</a></li>
-                            <li><a href="#">BDS</a></li>
-                            <li><a href="#">B.E.</a></li>
-                            <li><a href="#">MD</a></li>
-                            <li><a href="#">MS</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Destinations <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">India</a></li>
-                            <li><a href="#">China</a></li>
-                            <li><a href="#">Russia</a></li>
-                            <li><a href="#">Kyrgyzstan</a></li>
-                            <li><a href="#">Philippines</a></li>
-                            <li><a href="#">Georgia</a></li>
-                            <li><a href="#">Tajikistan</a></li>
-                            <li><a href="#">Ukraine</a></li>
-                            <li><a href="#">Romania</a></li>
-                            <li><a href="#">Armenia</a></li>
-                            <li><a href="#">Nepal</a></li>
-                            <li><a href="#">Iran</a></li>
-                            <li><a href="#">Bangladesh</a></li>
-                            <li><a href="#">Malaysia</a></li>
-                            <li><a href="#">Mauritius</a></li>
-                            <li><a href="#">Egypt</a></li>
-                            <li><a href="#">Moldova</a></li>
-                         </ul>
-                    </li>
-                    <li>
-                        <a href="#">Services <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Free Counseling</a></li>
-                            <li><a href="#">Admission Guidance</a></li>
-                            <li><a href="#">Visa Assistance</a></li>
-                            <li><a href="#">Test Preparation</a></li>
-                            <li><a href="#">Post-Arrival Support</a></li>
-                            <li><a href="#">Education Loans</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="./about.html">About Us</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
-                </ul>
-                
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li>
+                    <a href="#">Study Abroad <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./mbbsabroad.html">MBBS Abroad</a></li>
+                        <li><a href="./bds.html">BDS</a></li>
+                        <li><a href="./be.html">B.E.</a></li>
+                        <li><a href="./md.html">MD</a></li>
+                        <li><a href="./ms.html">MS</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Destinations <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./india.html">India</a></li>
+                        <li><a href="./china.html">China</a></li>
+                        <li><a href="./russian.html">Russia</a></li>
+                        <li><a href="./kazrkystan.htm">Kyrgyzstan</a></li>
+                        <li><a href="./phillipines.html">Philippines</a></li>
+                        <li><a href="./georgia.html">Georgia</a></li>
+                        <li><a href="./tajikistan.html">Tajikistan</a></li>
+                        <li><a href="./ukraine.html">Ukraine</a></li>
+                        
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./lmcouncelling.html">Free Counseling</a></li>
+                        <li><a href="./lmadmission.html">Admission Guidance</a></li>
+                        <li><a href="./lmvisa.html">Visa Assistance</a></li>
+                        <li><a href="./lmarrival.html">Post-Arrival Support</a></li>
+                        <li><a href="./lmloan.html">Education Loans</a></li>
+                    </ul>
+                </li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- JavaScript at the end of body -->
+ <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    // Toggle main mobile menu
+    mobileMenuBtn.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        document.body.classList.toggle('menu-open'); // Optional: to prevent scrolling when menu is open
+    });
+
+    // Handle dropdown menus on mobile
+    const navItemsWithDropdown = document.querySelectorAll('.nav-links li');
+    
+    navItemsWithDropdown.forEach(item => {
+        if (item.querySelector('.dropdown-menu')) {
+            const link = item.querySelector('a');
+            
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    item.classList.toggle('active');
+                    
+                    // Close other open dropdowns
+                    navItemsWithDropdown.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        }
+    });
+
+    // Optional: Close menu when clicking outside on mobile
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768 && 
+            !e.target.closest('.nav-links') && 
+            !e.target.closest('.mobile-menu-btn') &&
+            navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+    });
+});
+</script>
+<!-- Form Popup -->
+<div class="form-popup" id="popup-form">
+    <div class="form-container">
+        <button class="close-btn">&times;</button>
+        <div class="form-header">
+            <img src="./assets/UNIVERSALLOGO.png" alt="Universal Logo" class="form-logo">
+            <h3>Get Free Counseling</h3>
+            <p>Fill out this form to get expert guidance</p>
         </div>
-    </header>
+
+        <form class="enquiry-form">
+            <div class="form-group">
+                <input type="text" id="name" required>
+                <label for="name">Full Name</label>
+                <i class="fas fa-user"></i>
+            </div>
+
+            <div class="form-group">
+                <input type="email" id="email" required>
+                <label for="email">Email Address</label>
+                <i class="fas fa-envelope"></i>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" id="phone" required>
+                <label for="phone">Phone Number</label>
+                <i class="fas fa-phone"></i>
+            </div>
+
+            <div class="form-group">
+                <select id="course" required>
+                    <option value=""></option>
+                    <option value="MBBS">MBBS Abroad</option>
+                    <option value="BDS">BDS Abroad</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="MD">MD/MS</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="course">Course Interested In</label>
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+
+            <div class="form-group">
+                <select id="country" required>
+                    <option value=""></option>
+                    <option value="Russia">Russia</option>
+                    <option value="China">China</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="country">Preferred Destination</label>
+                <i class="fas fa-globe"></i>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <span>Submit Now</span>
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const logo = document.getElementById('logo');
+        const formPopup = document.getElementById('popup-form');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.querySelector('.close-btn');
+
+        logo.addEventListener('click', function (e) {
+            e.preventDefault();
+            formPopup.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        function closeForm() {
+            formPopup.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        overlay.addEventListener('click', closeForm);
+        closeBtn.addEventListener('click', closeForm);
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeForm();
+            }
+        });
+
+        const form = document.querySelector('.enquiry-form');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your enquiry! We will contact you soon.');
+            closeForm();
+            form.reset();
+        });
+
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', function () {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+    });
+</script>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -1182,7 +1792,7 @@ nav {
                         <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Free Counseling">
                     </div>
                     <div class="service-content">
-                        <h3>Free Counseling</h3>
+                        <h3>Free Counselling</h3>
                         <p>Expert guidance to choose the best country and university based on your academic profile, budget, and career aspirations.</p>
                         <a href="./lmcouncelling.html" class="btn">Learn More</a>
                     </div>
@@ -1340,34 +1950,118 @@ nav {
         </div>
       </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>What Our Students Say</h2>
-                <p>Hear from students who achieved their dreams of studying medicine abroad with our guidance</p>
-            </div>
-            
-            <div class="testimonial-slider">
-                <div class="testimonial-item">
-                    <div class="testimonial-text">
-                        <p>GlobalEd made my dream of studying MBBS in Russia come true. Their counselors guided me through every step from university selection to visa approval. The local support in Kazan was exceptional.</p>
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Success Stories</h2>
+            <p class="section-subtitle">Dreams Fulfilled Across Continents</p>
+            <div class="divider"></div>
+        </div>
+
+        <div class="testimonial-cards">
+            <!-- Testimonial Card 1 -->
+            <div class="testimonial-card">
+                <div class="student-photo">
+                    <img src="assets/ChatGPT man.png" alt="Rutvik Fale">
+                    <div class="university-badge">
+                        <img src="assets/kazkastan-png.png" alt="Kazan University">
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma">
-                        </div>
-                        <div class="author-info">
-                            <h4>Rahul Sharma</h4>
-                            <p>MBBS Student, Kazan Federal University</p>
+                </div>
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Universal Education transformed my dream of studying MBBS in Russia into reality. Their end-to-end guidance from university selection to visa processing was flawless. The local support team in Kazan made my transition seamless.</p>
+                    <div class="student-info">
+                        <h4>Rutvik kishor Fale</h4>
+                        <p>MBBS Graduate, Kazan state medical university</p>
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
                         </div>
                     </div>
                 </div>
-                
-                <!-- More testimonials would go here -->
+            </div>
+
+            <!-- Testimonial Card 2 -->
+            <div class="testimonial-card">
+                <div class="student-photo">
+                    <img src="assets/boyyy.png" alt="Meet Raut">
+                    <div class="university-badge">
+                        <img src="assets/images (1).jpeg" alt="University Logo">
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">The cultural immersion and academic excellence I experienced through Universal Education program exceeded all expectations. Their 24/7 support system gave my family and me complete peace of mind throughout my studies.</p>
+                    <div class="student-info">
+                        <h4>Meet Mahendra Raut</h4>
+                        <p>MBBS Student, TVER state medical university, Russia</p>
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Card 3 -->
+            <div class="testimonial-card">
+                <div class="student-photo">
+                    <img src="assets/ChatGPT girl.png" alt="Nayan Sathawane">
+                    <div class="university-badge">
+                        <img src="assets/images (2).jpeg" alt="Northern State Medical University">
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">As a female student, I was apprehensive about studying abroad alone. Universal Education provided exceptional support, from accommodation to local mentorship. Today I'm confidently pursuing my medical degree in Moscow with great academic results.</p>
+                    <div class="student-info">
+                        <h4>Nayan Vishnu Sathawane</h4>
+                        <p>MBBS Student, Northern State Medical University</p>
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Card 4 -->
+            <div class="testimonial-card">
+                <div class="student-photo">
+                    <img src="assets/ChatGPT Image Apr 21, 2025, 03_24_47 PM.png" alt="Meghraj Bhoyar">
+                    <div class="university-badge">
+                        <img src="assets/images (1).jpeg" alt="St. Petersburg University">
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">The scholarship guidance from Universal Education helped me secure 50% tuition waiver. Their expertise in documentation and application process made all the difference. I'm now in my final year with excellent clinical exposure.</p>
+                    <div class="student-info">
+                        <h4>Rahul Patel</h4>
+                        <p>MBBS Student, TVER State Medical University, Russia</p>
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Partners Section -->
     <section class="partners">
@@ -1378,11 +2072,11 @@ nav {
             </div>
             
             <div class="partner-logos">
-                <img src="C:\Users\HP\Desktop\universal\assets\logo (1).png" alt="Partner University" class="partner-logo">
-                <img src="C:\Users\HP\Desktop\universal\assets\CNU000055.png" alt="Partner University" class="partner-logo">
-                <img src="C:\Users\HP\Desktop\universal\assets\images.jpeg" alt="Partner University" class="partner-logo">
-                <img src="C:\Users\HP\Desktop\universal\assets\images.png" alt="Partner University" class="partner-logo">
-                <img src="C:\Users\HP\Desktop\universal\assets\65-657298_ama-school-of-medicine-official-logo-png-download.png" alt="Partner University" class="partner-logo">
+                <img src="assets/kazkastan-png.png" alt="Partner University" class="partner-logo">
+                <img src="assets/capital-medical2-png.png" alt="Partner University" class="partner-logo">
+                <img src="assets/images.jpeg" alt="Partner University" class="partner-logo">
+                <img src="assets/images.png" alt="Partner University" class="partner-logo">
+                <img src="assets/ama-png.png" alt="Partner University" class="partner-logo">
             </div>
         </div>
     </section>
@@ -1394,7 +2088,7 @@ nav {
                 <h2>Ready to Begin Your Medical Journey Abroad?</h2>
                 <p>Contact our MBBS abroad experts today for personalized guidance on university selection, admission process, and visa requirements.</p>
                 <div class="cta-btns">
-                    <a href="#" class="btn btn-accent"><i class="fas fa-phone-alt"></i> Call Now: +91 98222 40964</a>
+                    <a href="./+91 87937 17804" class="btn btn-accent"><i class="fas fa-phone-alt"></i> Call Now: +91 87937 17804</a>
                     <a href="#" class="btn btn-outline"><i class="fas fa-envelope"></i> Email Inquiry</a>
                 </div>
             </div>
@@ -1419,23 +2113,23 @@ nav {
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> MBBS Abroad</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Destinations</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="./about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="./mbbsabroad.html"><i class="fas fa-chevron-right"></i> MBBS Abroad</a></li>
+                        <li><a href="./destination.html"><i class="fas fa-chevron-right"></i> Destinations</a></li>
+                        <li><a href="./services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="./contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Study Destinations</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> MBBS in Russia</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> MBBS in China</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> MBBS in Philippines</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> MBBS in Ukraine</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> MBBS in Georgia</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> MBBS in Kyrgyzstan</a></li>
+                        <li><a href="./russian.html"><i class="fas fa-chevron-right"></i> MBBS in Russia</a></li>
+                        <li><a href="./china.html"><i class="fas fa-chevron-right"></i> MBBS in China</a></li>
+                        <li><a href="./phillipines.html"><i class="fas fa-chevron-right"></i> MBBS in Philippines</a></li>
+                        <li><a href="./ukraine.html"><i class="fas fa-chevron-right"></i> MBBS in Ukraine</a></li>
+                        <li><a href="./georgia.html"><i class="fas fa-chevron-right"></i> MBBS in Georgia</a></li>
+                        <li><a href="./kazrkystan.htm"><i class="fas fa-chevron-right"></i> MBBS in Kyrgyzstan</a></li>
                     </ul>
                 </div>
                 
@@ -1443,9 +2137,10 @@ nav {
                     <h3>Contact Us</h3>
                     <div class="footer-contact">
                         <p><i class="fas fa-map-marker-alt"></i> 201/A, Shri Sai Prasad Enclave, Opp. Axis Bank, Near Sai Mandir Wardha Road</p>
+                        <p><i class="fas fa-phone-alt"></i> +91 87937 17804</p>
                         <p><i class="fas fa-phone-alt"></i> +91 98222 40964</p>
-                        <p><i class="fas fa-envelope"></i> Manager.universaledu@gmail.com</p>
-                        <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
+                        <p><i class="fas fa-envelope"></i> manager.universaledu@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 10:00 AM - 7:00 PM</p>
                     </div>
                 </div>
             </div>
@@ -1458,25 +2153,29 @@ nav {
         </div>
     </footer>
 
-   
+    <script>
+        // Country Tabs Functionality
+        const countryT
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Universal Education Consultants</h3>
-                    <p>Your trusted partner for medical education abroad since 2010. We've helped 5000+ students achieve their dreams.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Countries</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
+    <div class="footer-col">
+        <h3>Universal Education Consultants</h3>
+        <p>Your trusted partner for medical education abroad since 2010. We've helped 5000+ students achieve their dreams.</p>
+    </div>
+    <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="countries.html">Countries</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</div>
                 <div class="footer-col">
                     <h3>Services</h3>
                     <ul>
@@ -1493,7 +2192,7 @@ nav {
                         <li>201/A, Shri Sai Prasad Enclave, Opp. Axis Bank, Near Sai Mandir Wardha Road</li>
                         <li>Nagpur, India 440015</li>
                         <li>Phone: +91 98222 40964</li>
-                        <li>Email: Manager.universaledu@gmail.com</li>
+                        <li>Email: manager.universaledu@gmail.com</li>
                     </ul>
                 </div>
             </div>

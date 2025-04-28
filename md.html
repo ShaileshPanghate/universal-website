@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD in Medicine | UNIVERSAL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #005792;
+            --secondary: #00BBF0;
+            --accent: #FF6B6B;
+            --light: #F7F9FC;
+            --dark: #2C3E50;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            background-color: #fefefe;
+        }
+
+        /* Animated Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(0, 87, 146, 0.9) 0%, rgba(0, 187, 240, 0.8) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s 0.3s ease both;
+        }
+
+        /* Floating Particles Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        /* 3D Card Highlights */
+        .highlights {
+            padding: 8rem 2rem;
+            background: var(--light);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .highlight-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            width: 350px;
+            padding: 3rem 2rem;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .card:hover {
+            transform: translateY(-20px) rotateY(10deg);
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-icon {
+            font-size: 4rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-icon {
+            transform: scale(1.1);
+            color: var(--accent);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .card-link i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-link {
+            color: var(--accent);
+        }
+
+        .card:hover .card-link i {
+            transform: translateX(5px);
+        }
+
+        /* Interactive Curriculum Timeline */
+        .curriculum {
+            padding: 8rem 0;
+            background: white;
+            position: relative;
+        }
+
+        .timeline-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 5rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 0 4rem;
+            margin-bottom: 4rem;
+            animation: fadeIn 1s ease both;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-content {
+            padding: 2.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .timeline-year {
+            position: absolute;
+            top: -25px;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: -25px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-year {
+            left: -25px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--secondary);
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--secondary);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -12px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -12px;
+        }
+
+        /* Rotating Specialties Carousel */
+        .specialties {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            max-width: 1200px;
+            margin: 5rem auto;
+            position: relative;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rotate 30s infinite linear;
+        }
+
+        .carousel:hover {
+            animation-play-state: paused;
+        }
+
+        .carousel-item {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            left: 50%;
+            top: 50%;
+            transform-origin: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .carousel-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1) !important;
+            z-index: 10;
+        }
+
+        .carousel-item i {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .carousel-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Stats Counter */
+        .stats {
+            padding: 6rem 2rem;
+            background: white;
+            text-align: center;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            margin: 1rem;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* Testimonials with Parallax */
+        .testimonials {
+            padding: 10rem 2rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .testimonial:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .testimonial img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 3px solid var(--secondary);
+        }
+
+        .testimonial p {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial .position {
+            color: var(--secondary);
+            font-weight: 300;
+        }
+
+        /* 3D Apply Now Section */
+        .apply-now {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apply-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .apply-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 4rem;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform-style: preserve-3d;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .apply-card:hover {
+            transform: translateY(-20px) rotateX(5deg);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        .apply-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .apply-card p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .apply-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .apply-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            border-radius: 50%;
+            background: white;
+            animation: float 15s infinite linear;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateY(0deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .carousel-container {
+                height: 300px;
+            }
+            
+            .carousel-item {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .timeline::before {
+                left: 40px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 90px;
+                padding-right: 30px;
+                text-align: left !important;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-year,
+            .timeline-item:nth-child(even) .timeline-year {
+                left: -25px;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 30px;
+                right: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .card {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .apply-card {
+                padding: 2rem;
+            }
+            
+            .apply-card h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Hero Section with Video Background -->
+    <section class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-doctor-with-a-stethoscope-in-the-hospital-23239-large.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Floating Particles -->
+        <div class="particles" id="particles"></div>
+        
+        <div class="hero-content">
+            <h1>Doctor of Medicine Program</h1>
+            <p>Transform your passion for healing into exceptional medical expertise through our world-renowned MD program.</p>
+            <a href="#apply" class="cta-button">Begin Your Journey <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- 3D Card Highlights -->
+    <section class="highlights">
+        <h2 class="section-title">Why Choose Our MD Program?</h2>
+        <div class="highlight-cards">
+            <div class="card">
+                <i class="fas fa-user-md card-icon"></i>
+                <h3>Clinical Mastery</h3>
+                <p>Train with world-class physicians across 12 teaching hospitals with cutting-edge simulation centers and robotic surgery suites.</p>
+                <a href="#" class="card-link">Learn More <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-dna card-icon"></i>
+                <h3>Research Innovation</h3>
+                <p>Access $250M in annual research funding and collaborate with Nobel laureates on groundbreaking medical discoveries.</p>
+                <a href="#" class="card-link">Our Research <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-globe-americas card-icon"></i>
+                <h3>Global Impact</h3>
+                <p>Participate in international rotations across 25 countries and work with WHO on global health initiatives.</p>
+                <a href="#" class="card-link">Global Programs <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Curriculum Timeline -->
+    <section class="curriculum">
+        <h2 class="section-title">Medical Education Journey</h2>
+        <div class="timeline-container">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">Year 1</span>
+                        <h3>Foundations of Medicine</h3>
+                        <ul>
+                            <li>Human Anatomy with cadaver lab</li>
+                            <li>Molecular Medicine</li>
+                            <li>Clinical Skills Introduction</li>
+                            <li>Medical Ethics</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">Year 2</span>
+                        <h3>Systems-Based Learning</h3>
+                        <ul>
+                            <li>Pathology and Pharmacology</li>
+                            <li>Diagnostic Methods</li>
+                            <li>Patient-Centered Care</li>
+                            <li>Research Methodology</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">Year 3</span>
+                        <h3>Core Clinical Rotations</h3>
+                        <ul>
+                            <li>Internal Medicine (12 weeks)</li>
+                            <li>Surgery (8 weeks)</li>
+                            <li>Pediatrics (6 weeks)</li>
+                            <li>OB/GYN (6 weeks)</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">Year 4</span>
+                        <h3>Advanced Clinicals & Electives</h3>
+                        <ul>
+                            <li>Neurology</li>
+                            <li>Cardiology</li>
+                            <li>Emergency Medicine</li>
+                            <li>Capstone Research Project</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rotating Specialties Carousel -->
+    <section class="specialties">
+        <h2 class="section-title">Specialty Pathways</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item" style="transform: rotateY(0deg) translateZ(400px)">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Cardiology</h3>
+                    <p>Heart health and cardiovascular systems</p>
+                </div>
+                <div class="carousel-item" style="transform: rotateY(60deg) translateZ(400px)">
+                    <i class="fas fa-brain"></i>
+                    <h3>Neurology</h3>
+                    <p>Brain and nervous system disorders</p>
+                </div>
+                <div class="carousel-item" style="transform: rotateY(120deg) translateZ(400px)">
+                    <i class="fas fa-bone"></i>
+                    <h3>Orthopedics</h3>
+                    <p>Musculoskeletal system care</p>
+                </div>
+                <div class="carousel-item" style="transform: rotateY(180deg) translateZ(400px)">
+                    <i class="fas fa-lungs"></i>
+                    <h3>Pulmonology</h3>
+                    <p>Respiratory health and diseases</p>
+                </div>
+                <div class="carousel-item" style="transform: rotateY(240deg) translateZ(400px)">
+                    <i class="fas fa-child"></i>
+                    <h3>Pediatrics</h3>
+                    <p>Healthcare for children</p>
+                </div>
+                <div class="carousel-item" style="transform: rotateY(300deg) translateZ(400px)">
+                    <i class="fas fa-procedures"></i>
+                    <h3>Surgery</h3>
+                    <p>Operative procedures</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter -->
+    <section class="stats">
+        <h2 class="section-title">By The Numbers</h2>
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" id="students">0</div>
+                <div class="stat-label">Medical Students</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="faculty">0</div>
+                <div class="stat-label">Faculty Members</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="hospitals">0</div>
+                <div class="stat-label">Teaching Hospitals</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="match">0</div>
+                <div class="stat-label">Residency Match Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials with Parallax -->
+    <section class="testimonials">
+        <h2 class="section-title">Hear From Our Community</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dr. Sarah Chen">
+                <p>"The MD program's emphasis on early clinical exposure gave me the confidence to excel in my surgical residency. The faculty mentorship was unparalleled."</p>
+                <h4>Dr. Sarah Chen</h4>
+                <div class="position">Cardiac Surgery Resident, Mayo Clinic</div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. James Rodriguez">
+                <p>"As an international student, I was amazed by the global health opportunities. My rotation in Botswana transformed my approach to medicine."</p>
+                <h4>Dr. James Rodriguez</h4>
+                <div class="position">Global Health Fellow, WHO</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Apply Now Section -->
+    <section class="apply-now">
+        <div class="floating-shapes" id="floating-shapes"></div>
+        <div class="apply-container">
+            <div class="apply-card">
+                <h2>Ready to Join the Next Generation of Physicians?</h2>
+                <p>Applications for Fall 2025 are now open. Begin your journey toward medical excellence today.</p>
+                <a href="#" class="apply-button">Apply Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 10 + 10;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                particles.appendChild(particle);
+            }
+        }
+        
+        // Create floating shapes for apply section
+        function createShapes() {
+            const container = document.getElementById('floating-shapes');
+            const shapes = ['circle', 'triangle', 'square'];
+            const shapeCount = 15;
+            
+            for (let i = 0; i < shapeCount; i++) {
+                const shape = document.createElement('div');
+                shape.classList.add('shape');
+                
+                // Random properties
+                const size = Math.random() * 100 + 50;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 20 + 10;
+                
+                shape.style.width = `${size}px`;
+                shape.style.height = `${size}px`;
+                shape.style.left = `${posX}%`;
+                shape.style.top = `${posY}%`;
+                shape.style.animationDelay = `${delay}s`;
+                shape.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(shape);
+            }
+        }
+        
+        // Animated counter for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            createShapes();
+            
+            // Set target numbers for counters
+            document.getElementById('students').setAttribute('data-target', '1260');
+            document.getElementById('faculty').setAttribute('data-target', '340');
+            document.getElementById('hospitals').setAttribute('data-target', '12');
+            document.getElementById('match').setAttribute('data-target', '98');
+            
+            // Start counters when stats section is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(document.querySelector('.stats'));
+        });
+    </script>
+</body>
+</html>

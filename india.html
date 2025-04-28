@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS in India - World-Class Medical Education | Universal Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #e63946;
+            --dark: #1d3557;
+            --light: #f1faee;
+            --accent: #457b9d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+            font-size: 2.2rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin: 25px 0 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* Why Study Section */
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Colleges Table */
+        .table-container {
+            overflow-x: auto;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        /* Course Structure */
+        .course-structure {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .structure-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .structure-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        /* Admission Process */
+        .process-steps {
+            counter-reset: step;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .step {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+        
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        /* Scholarship Section */
+        .scholarship-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .scholarship-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--primary);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .contact-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-highlight {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1 class="animated">MBBS in India</h1>
+            <p class="tagline animated delay-1">Your Gateway to a World-Class Medical Career</p>
+            <p class="animated delay-2">Globally Recognized Degrees • Affordable Fees • Excellent Clinical Exposure</p>
+        </div>
+    </header>
+
+    <!-- Why Study Section -->
+    <section id="why-study">
+        <div class="container">
+            <h2 class="animated">Why Study MBBS in India?</h2>
+            <p class="animated delay-1">India is one of the most sought-after destinations for medical education, offering world-class infrastructure, experienced faculty, and affordable tuition fees. With globally recognized degrees, state-of-the-art hospitals, and a rich medical heritage, India provides the perfect environment for aspiring doctors.</p>
+            
+            <div class="benefits-container">
+                <div class="benefit-card animated delay-1">
+                    <i class="fas fa-globe"></i>
+                    <h3>Globally Recognized Degrees</h3>
+                    <p>NMC (formerly MCI) & WHO approved medical degrees accepted worldwide</p>
+                </div>
+                
+                <div class="benefit-card animated delay-2">
+                    <i class="fas fa-rupee-sign"></i>
+                    <h3>Affordable Fees</h3>
+                    <p>Low cost of education compared to western countries with similar quality</p>
+                </div>
+                
+                <div class="benefit-card animated delay-3">
+                    <i class="fas fa-language"></i>
+                    <h3>English Medium</h3>
+                    <p>All medical courses taught in English for international students</p>
+                </div>
+                
+                <div class="benefit-card animated delay-1">
+                    <i class="fas fa-hospital"></i>
+                    <h3>Clinical Exposure</h3>
+                    <p>Extensive hands-on training in top hospitals with diverse patient cases</p>
+                </div>
+                
+                <div class="benefit-card animated delay-2">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>High Success Rates</h3>
+                    <p>Excellent FMGE & NEXT pass percentages from top Indian colleges</p>
+                </div>
+                
+                <div class="benefit-card animated delay-3">
+                    <i class="fas fa-users"></i>
+                    <h3>Cultural Diversity</h3>
+                    <p>Experience India's rich cultural heritage while studying medicine</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Colleges Section -->
+    <section id="top-colleges" style="background-color: #f1f7fd;">
+        <div class="container">
+            <h2 class="animated">Top Medical Colleges in India (NMC Approved)</h2>
+            <p class="animated delay-1">India boasts some of the finest medical institutions in the world with excellent infrastructure and faculty</p>
+            
+            <div class="table-container animated delay-2">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>College Name</th>
+                            <th>Location</th>
+                            <th>Established</th>
+                            <th>Annual Fees (Approx.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AIIMS Delhi</td>
+                            <td>New Delhi</td>
+                            <td>1956</td>
+                            <td>₹1,500 - ₹5,000</td>
+                        </tr>
+                        <tr>
+                            <td>Maulana Azad Medical College</td>
+                            <td>Delhi</td>
+                            <td>1956</td>
+                            <td>₹10,000 - ₹50,000</td>
+                        </tr>
+                        <tr>
+                            <td>King George's Medical University</td>
+                            <td>Lucknow</td>
+                            <td>1905</td>
+                            <td>₹50,000 - ₹1,00,000</td>
+                        </tr>
+                        <tr>
+                            <td>Christian Medical College (CMC)</td>
+                            <td>Vellore</td>
+                            <td>1900</td>
+                            <td>₹50,000 - ₹5,00,000</td>
+                        </tr>
+                        <tr>
+                            <td>Kasturba Medical College (KMC)</td>
+                            <td>Manipal</td>
+                            <td>1953</td>
+                            <td>₹10 - ₹25 Lakhs</td>
+                        </tr>
+                        <tr>
+                            <td>Armed Forces Medical College</td>
+                            <td>Pune</td>
+                            <td>1948</td>
+                            <td>₹60,000 - ₹80,000</td>
+                        </tr>
+                        <tr>
+                            <td>Grant Medical College</td>
+                            <td>Mumbai</td>
+                            <td>1845</td>
+                            <td>₹20,000 - ₹1,00,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="animated delay-3" style="text-align: center; margin-top: 20px; font-style: italic;">*Fees vary based on quota & category</p>
+        </div>
+    </section>
+
+    <!-- Course Structure Section -->
+    <section id="course-structure">
+        <div class="container">
+            <h2 class="animated">MBBS in India: Course Structure</h2>
+            
+            <div class="course-structure animated delay-1">
+                <div class="structure-grid">
+                    <div class="structure-item">
+                        <div class="structure-icon">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Duration</h3>
+                            <p>5.5 Years (4.5 Years Academics + 1 Year Internship)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="structure-item">
+                        <div class="structure-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h3>Eligibility</h3>
+                            <p>NEET Qualified | 50% in PCB (12th Grade)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="structure-item">
+                        <div class="structure-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div>
+                            <h3>Admission Process</h3>
+                            <p>NEET Exam → Counselling → Seat Allotment</p>
+                        </div>
+                    </div>
+                    
+                    <div class="structure-item">
+                        <div class="structure-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div>
+                            <h3>Medium of Instruction</h3>
+                            <p>English</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Process Section -->
+    <section id="admission-process" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="animated">Admission Process for MBBS in India</h2>
+            
+            <div class="process-steps">
+                <div class="step animated delay-1">
+                    <h3>Clear NEET Exam</h3>
+                    <p>National Eligibility cum Entrance Test (NEET) is mandatory for all students (Indian & NRI) seeking MBBS admission in India. The exam tests Physics, Chemistry, and Biology knowledge at 12th-grade level.</p>
+                </div>
+                
+                <div class="step animated delay-2">
+                    <h3>Participate in Counselling</h3>
+                    <p>After NEET results, register for centralized counselling conducted by MCC (Medical Counselling Committee) for All India Quota seats or respective state authorities for state quota seats.</p>
+                </div>
+                
+                <div class="step animated delay-3">
+                    <h3>Seat Allotment & College Reporting</h3>
+                    <p>Based on NEET rank, preferences, and seat availability, you'll be allotted a college. You must physically report to the allotted college within stipulated time with all documents.</p>
+                </div>
+                
+                <div class="step animated delay-1">
+                    <h3>Document Verification & Fee Payment</h3>
+                    <p>Submit original documents for verification and pay the admission fee to confirm your seat. Documents typically include NEET scorecard, 10+2 mark sheet, identity proof, etc.</p>
+                </div>
+                
+                <div class="step animated delay-2">
+                    <h3>Start Your MBBS Journey!</h3>
+                    <p>Once admission is confirmed, attend orientation and begin your medical education at one of India's premier institutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarships Section -->
+    <section id="scholarships">
+        <div class="container">
+            <h2 class="animated">Scholarships & Financial Aid</h2>
+            <p class="animated delay-1">The Indian government and private institutions offer multiple scholarship opportunities for deserving medical students:</p>
+            
+            <div class="scholarship-cards">
+                <div class="scholarship-card animated delay-1">
+                    <h3>Central Sector Scheme</h3>
+                    <p>Government scholarship for medical students from economically weaker sections covering tuition fees and providing maintenance allowance.</p>
+                </div>
+                
+                <div class="scholarship-card animated delay-2">
+                    <h3>State Government Scholarships</h3>
+                    <p>Most Indian states offer merit-cum-means scholarships for students pursuing medical education in government colleges.</p>
+                </div>
+                
+                <div class="scholarship-card animated delay-3">
+                    <h3>Merit-Based Fee Waivers</h3>
+                    <p>Private medical colleges often provide partial or full fee waivers for students with outstanding NEET ranks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Life Section -->
+    <section id="student-life" style="background-color: #f1f7fd;">
+        <div class="container">
+            <h2 class="animated">Life as an MBBS Student in India</h2>
+            
+            <div class="benefits-container">
+                <div class="benefit-card animated delay-1">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Affordable Living</h3>
+                    <p>Low cost of living with comfortable hostels, nutritious food, and convenient transportation options.</p>
+                </div>
+                
+                <div class="benefit-card animated delay-2">
+                    <i class="fas fa-users"></i>
+                    <h3>Vibrant Campus Life</h3>
+                    <p>Medical fests, cultural events, sports competitions, and student clubs make campus life exciting.</p>
+                </div>
+                
+                <div class="benefit-card animated delay-3">
+                    <i class="fas fa-globe-asia"></i>
+                    <h3>Cultural Diversity</h3>
+                    <p>Interact with students from across India and abroad, experiencing diverse cultures and traditions.</p>
+                </div>
+                
+                <div class="benefit-card animated delay-1">
+                    <i class="fas fa-procedures"></i>
+                    <h3>Clinical Rotations</h3>
+                    <p>Gain hands-on experience in affiliated hospitals with exposure to varied medical cases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="animated">Contact Us for MBBS Admission Guidance!</h2>
+            <p class="animated delay-1" style="margin-bottom: 30px;">Our expert counselors will help you navigate the entire admission process</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card animated delay-1">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Call Us</h3>
+                    <p>+91 87937 17804</p>
+                    <p>Monday to Saturday, 10AM - 7PM</p>
+                </div>
+                
+                <div class="contact-card animated delay-2">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p> manager.universaledu@gmail.com</p>
+                    <p>Response within 24 hours</p>
+                </div>
+                
+                <div class="contact-card animated delay-3">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>201/A, Shri Sai Prasad Enclave, Opp. Axis Bank, Near Sai Mandir Wardha Road</p>
+                    <p>Nagpur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose">
+        <div class="container">
+            <h2 class="animated">Why Choose Universal Education?</h2>
+            
+            <div class="benefits-container" style="margin-top: 40px;">
+                <div class="benefit-card animated delay-1">
+                    <i class="fas fa-award"></i>
+                    <h3>10+ Years Experience</h3>
+                    <p>Over a decade of successfully guiding students to top medical colleges</p>
+                </div>
+                
+                <div class="benefit-card animated delay-2">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>1000+ Placements</h3>
+                    <p>We've helped over a thousand students secure MBBS seats in India</p>
+                </div>
+                
+                <div class="benefit-card animated delay-3">
+                    <i class="fas fa-comments"></i>
+                    <h3>Free Counseling</h3>
+                    <p>Expert advice with no obligation to help you make informed decisions</p>
+                </div>
+                
+                <div class="benefit-card animated delay-1">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Reputation</h3>
+                    <p>Trusted by students and parents from across the world</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;" class="animated delay-2">
+                <a href="#contact" style="background: var(--primary); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; transition: all 0.3s ease;">Apply Now & Secure Your MBBS Seat!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3 style="margin-bottom: 20px;" class="animated">Your Future in Medicine Begins Here!</h3>
+            <p class="animated delay-1">"Dream Big, Study Smart, Become a Doctor!"</p>
+            
+            <div style="margin: 30px 0;" class="animated delay-2">
+                <a href="#" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <p class="animated delay-3">&copy; 2023 Universal Education. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation trigger on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animated');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

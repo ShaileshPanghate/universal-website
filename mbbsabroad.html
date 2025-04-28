@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Abroad | Universal Education Consultancy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #0056b3;
+            --secondary: #e63946;
+            --accent: #ffcc00;
+            --dark: #222;
+            --light: #f8f9fa;
+            --text: #333;
+            --text-light: #666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #003d82;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #c1121f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+        }
+        
+        /* Header */
+        .mbbs-header {
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.8)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        .mbbs-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .mbbs-header p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .header-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Why MBBS Abroad Section */
+        .why-mbbs {
+            background-color: var(--light);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Countries Section */
+        .countries-section .section-title {
+            margin-bottom: 30px;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .tab-btn {
+            padding: 10px 25px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .country-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .country-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .country-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .country-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .country-card:hover .country-img img {
+            transform: scale(1.1);
+        }
+        
+        .country-info {
+            padding: 25px;
+        }
+        
+        .country-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .country-info p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .country-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-item h4 {
+            color: var(--secondary);
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        
+        .stat-item p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        
+        /* Eligibility Section */
+        .eligibility-section {
+            background: linear-gradient(rgba(0, 86, 179, 0.9), rgba(0, 86, 179, 0.9)), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+        
+        .eligibility-section .section-title h2,
+        .eligibility-section .section-title p {
+            color: white;
+        }
+        
+        .eligibility-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .eligibility-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .eligibility-box h3 {
+            margin-bottom: 20px;
+            font-size: 22px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .eligibility-box h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .eligibility-box ul {
+            list-style: none;
+        }
+        
+        .eligibility-box ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .eligibility-box ul li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent);
+        }
+        
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 1;
+        }
+        
+        .step {
+            background: white;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .step-1 { background: var(--primary); }
+        .step-2 { background: #0077cc; }
+        .step-3 { background: #0099ff; }
+        .step-4 { background: #ff6600; }
+        .step-5 { background: var(--secondary); }
+        
+        .step-content {
+            text-align: center;
+            margin-top: 20px;
+            width: 200px;
+        }
+        
+        .step-content h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), #003d82);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mbbs-header h1 {
+                font-size: 36px;
+            }
+            
+            .mbbs-header p {
+                font-size: 16px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .header-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-steps:before {
+                display: none;
+            }
+            
+            .step-content {
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- MBBS Header -->
+    <header class="mbbs-header">
+        <div class="container">
+            <h1>MBBS Abroad - Your Path to Becoming a Doctor</h1>
+            <p>Get world-class medical education at affordable costs from internationally recognized universities with our expert guidance and support throughout your journey.</p>
+            <div class="header-btns">
+                <a href="./contact.html" class="btn btn-secondary">Free Consultation</a>
+                <a href="#countries" class="btn btn-primary">Explore Countries</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Why MBBS Abroad Section -->
+    <section class="why-mbbs section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose MBBS Abroad?</h2>
+                <p>Discover the advantages of pursuing your medical degree from top international universities</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Globally Recognized Degrees</h3>
+                    <p>Medical degrees from our partner universities are recognized by WHO, MCI, and other international medical councils.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Affordable Tuition Fees</h3>
+                    <p>Cost-effective medical education compared to private colleges in your home country with similar quality.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>English Medium Instruction</h3>
+                    <p>All courses are taught in English with no language barrier for international students.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Advanced Infrastructure</h3>
+                    <p>State-of-the-art laboratories, modern hospitals, and advanced teaching methodologies.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <h3>International Exposure</h3>
+                    <p>Experience diverse cultures and medical practices while studying with students from worldwide.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Excellent Career Opportunities</h3>
+                    <p>Global recognition opens doors to practice medicine in multiple countries after graduation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Top Countries for MBBS Section -->
+    <section id="countries" class="countries-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Top Countries for MBBS Abroad</h2>
+                <p>We partner with the best medical universities across these countries</p>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab-btn active" data-tab="all">All Countries</div>
+                <div class="tab-btn" data-tab="europe">Europe</div>
+                <div class="tab-btn" data-tab="asia">Asia</div>
+                <div class="tab-btn" data-tab="america">America</div>
+            </div>
+            
+            <div class="tab-content active" id="all">
+                <div class="country-grid">
+                    <div class="country-card" data-category="europe">
+                        <div class="country-img">
+                            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Russia">
+                        </div>
+                        <div class="country-info">
+                            <h3>Russia</h3>
+                            <p>Home to some of the oldest and most prestigious medical universities with English medium programs.</p>
+                            <div class="country-stats">
+                                <div class="stat-item">
+                                    <h4>15+</h4>
+                                    <p>Universities</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>$3K-$6K</h4>
+                                    <p>Annual Fees</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>6 Years</h4>
+                                    <p>Duration</p>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-primary">Explore Universities</a>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-category="europe">
+                        <div class="country-img">
+                            <img src="assets/georgia.jpg" alt="Georgia">
+                        </div>
+                        <div class="country-info">
+                            <h3>Georgia</h3>
+                            <p>High-quality medical education at affordable costs with European standards.</p>
+                            <div class="country-stats">
+                                <div class="stat-item">
+                                    <h4>10+</h4>
+                                    <p>Universities</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>$3.5K-$5K</h4>
+                                    <p>Annual Fees</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>6 Years</h4>
+                                    <p>Duration</p>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-primary">Explore Universities</a>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-category="asia">
+                        <div class="country-img">
+                            <img src="assets/kyzrkystan.jpg" alt="Kyrgyzstan">
+                        </div>
+                        <div class="country-info">
+                            <h3>Kyrgyzstan</h3>
+                            <p>World-class infrastructure with advanced medical training facilities.</p>
+                            <div class="country-stats">
+                                <div class="stat-item">
+                                    <h4>25+</h4>
+                                    <p>Universities</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>$4K-$8K</h4>
+                                    <p>Annual Fees</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>5-6 Years</h4>
+                                    <p>Duration</p>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-primary">Explore Universities</a>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-category="asia">
+                        <div class="country-img">
+                            <img src="assets/nepal.jpg" alt="Nepal">
+                        </div>
+                        <div class="country-info">
+                            <h3>Nepal</h3>
+                            <p>American-style medical education with English as the primary language of instruction.</p>
+                            <div class="country-stats">
+                                <div class="stat-item">
+                                    <h4>8+</h4>
+                                    <p>Universities</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>$3K-$5K</h4>
+                                    <p>Annual Fees</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>5.5 Years</h4>
+                                    <p>Duration</p>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-primary">Explore Universities</a>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-category="europe">
+                        <div class="country-img">
+                            <img src="assets/kazakastan.jpg" alt="Kazakhstan">
+                        </div>
+                        <div class="country-info">
+                            <h3>Kazakhstan</h3>
+                            <p>European standard medical education with affordable tuition and living costs.</p>
+                            <div class="country-stats">
+                                <div class="stat-item">
+                                    <h4>5+</h4>
+                                    <p>Universities</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>$4K-$7K</h4>
+                                    <p>Annual Fees</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>6 Years</h4>
+                                    <p>Duration</p>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-primary">Explore Universities</a>
+                        </div>
+                    </div>
+                    
+                    <div class="country-card" data-category="america">
+                        <div class="country-img">
+                            <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" alt="Uzbekistan">
+                        </div>
+                        <div class="country-info">
+                            <h3>Uzbekistan</h3>
+                            <p>Caribbean medical schools with US curriculum and clinical rotations in America.</p>
+                            <div class="country-stats">
+                                <div class="stat-item">
+                                    <h4>6+</h4>
+                                    <p>Universities</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>$15K-$25K</h4>
+                                    <p>Annual Fees</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>4 Years</h4>
+                                    <p>Duration</p>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-primary">Explore Universities</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Eligibility Section -->
+    <section class="eligibility-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Eligibility Criteria</h2>
+                <p>Requirements to pursue MBBS abroad through Universal Education Consultancy</p>
+            </div>
+            
+            <div class="eligibility-content">
+                <div class="eligibility-box">
+                    <h3>Academic Requirements</h3>
+                    <ul>
+                        <li>Minimum 50% marks in 10+2 (PCB) for general category</li>
+                        <li>40% marks for reserved categories (varies by country)</li>
+                        <li>Physics, Chemistry, Biology as main subjects</li>
+                        <li>English as a compulsory subject</li>
+                        <li>NEET qualification (for Indian students)</li>
+                        <li>Minimum 17 years of age</li>
+                    </ul>
+                </div>
+                
+                <div class="eligibility-box">
+                    <h3>Document Requirements</h3>
+                    <ul>
+                        <li>10th and 12th mark sheets and certificates</li>
+                        <li>NEET scorecard (for Indian students)</li>
+                        <li>Passport with minimum 18 months validity</li>
+                        <li>Birth certificate</li>
+                        <li>Medical fitness certificate</li>
+                        <li>Passport size photographs</li>
+                        <li>Statement of purpose</li>
+                        <li>Letters of recommendation (if required)</li>
+                    </ul>
+                </div>
+                
+                <div class="eligibility-box">
+                    <h3>Other Requirements</h3>
+                    <ul>
+                        <li>English proficiency test (IELTS/TOEFL for some countries)</li>
+                        <li>Financial proof for tuition and living expenses</li>
+                        <li>Police clearance certificate</li>
+                        <li>HIV test reports (for some countries)</li>
+                        <li>COVID vaccination certificate (if required)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Admission Process Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admission Process</h2>
+                <p>Our streamlined 5-step process makes your MBBS abroad journey smooth and hassle-free</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step step-1">1</div>
+                <div class="step-content">
+                    <h4>Free Counseling</h4>
+                    <p>Our experts guide you to choose the right country & university based on your profile</p>
+                </div>
+                
+                <div class="step step-2">2</div>
+                <div class="step-content">
+                    <h4>Documentation</h4>
+                    <p>We help prepare and verify all required documents for admission</p>
+                </div>
+                
+                <div class="step step-3">3</div>
+                <div class="step-content">
+                    <h4>University Application</h4>
+                    <p>We process your application to the chosen universities</p>
+                </div>
+                
+                <div class="step step-4">4</div>
+                <div class="step-content">
+                    <h4>Admission & Visa</h4>
+                    <p>We secure your admission letter and assist with student visa process</p>
+                </div>
+                
+                <div class="step step-5">5</div>
+                <div class="step-content">
+                    <h4>Pre-Departure</h4>
+                    <p>Final preparations including travel, accommodation and orientation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Begin Your Medical Journey?</h2>
+            <p>Our expert counselors are available to guide you through every step of your MBBS abroad journey. Contact us today for a free consultation.</p>
+            <a href="./contact.html" class="btn btn-secondary">Get Free Consultation</a>
+        </div>
+    </section>
+    
+    <script>
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                if (tabId === 'all') {
+                    document.getElementById('all').classList.add('active');
+                } else {
+                    const countryCards = document.querySelectorAll('.country-card');
+                    countryCards.forEach(card => {
+                        if (card.getAttribute('data-category') === tabId) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    document.getElementById('all').classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

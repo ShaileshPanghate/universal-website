@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS in Kyrgyzstan | Affordable Quality Medical Education</title>
+    <style>
+        :root {
+            --primary: #2c7873;
+            --accent: #ff7b25;
+            --light: #f5f5f5;
+            --dark: #36454f;
+            --text: #4a4a4a;
+            --white: #ffffff;
+        }
+        
+        /* Hero Section */
+        .mbbs-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #4fa49a 100%);
+            color: var(--white);
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mbbs-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: 1;
+        }
+        
+        .mbbs-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .mbbs-hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .mbbs-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            font-size: 1.1rem;
+            border: 2px solid transparent;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            background-color: transparent;
+            border-color: var(--white);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 70px 0;
+            background-color: var(--dark);
+            color: var(--white);
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 30px 20px;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Why Kyrgyzstan Section */
+        .why-kyrgyzstan {
+            padding: 90px 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 20px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: var(--accent);
+            border-radius: 3px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .benefit-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 35px 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .benefit-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+        
+        .benefit-card h3 {
+            color: var(--dark);
+            margin-bottom: 18px;
+            font-size: 1.6rem;
+        }
+        
+        .benefit-card p {
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        /* Universities Section */
+        .universities {
+            padding: 90px 0;
+            background-color: var(--white);
+        }
+        
+        .university-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .university-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+        }
+        
+        .university-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .university-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .university-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .university-card:hover .university-img img {
+            transform: scale(1.1);
+        }
+        
+        .university-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .university-info {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .university-info h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .university-info p {
+            color: var(--text);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .university-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .meta-item {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .meta-value {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .meta-label {
+            color: var(--text);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Admission Process */
+        .admission-process {
+            padding: 90px 0;
+            background-color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .admission-process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1581092921461-39b2f2a8b3f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.03;
+            z-index: 1;
+        }
+        
+        .process-container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-step:hover {
+            transform: translateX(10px);
+        }
+        
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--accent);
+        }
+        
+        .step-number {
+            background-color: var(--primary);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            color: var(--dark);
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+        
+        .step-content p {
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        /* Living in Kyrgyzstan */
+        .living-section {
+            padding: 90px 0;
+            background-color: var(--white);
+        }
+        
+        .living-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .living-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .living-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .living-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .living-content h2 {
+            color: var(--dark);
+            font-size: 2.3rem;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        
+        .living-content p {
+            color: var(--text);
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        .living-features {
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .feature-text h4 {
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .feature-text p {
+            color: var(--text);
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 90px 0;
+            background-color: var(--light);
+        }
+        
+        .testimonial-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 6rem;
+            color: rgba(44, 120, 115, 0.08);
+            font-family: serif;
+            line-height: 1;
+            z-index: 1;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 25px;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 3px solid var(--primary);
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+        
+        .author-info p {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--accent) 0%, #e66a2c 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .cta-container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+        }
+        
+        .white-button {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--accent);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            font-size: 1.1rem;
+            border: 2px solid transparent;
+        }
+        
+        .white-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            background-color: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .living-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .living-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mbbs-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .mbbs-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .university-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section h2 {
+                font-size: 2.3rem;
+            }
+            
+            .cta-section p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .mbbs-hero {
+                padding: 80px 0;
+            }
+            
+            .mbbs-hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="mbbs-hero">
+        <div class="mbbs-hero-content">
+            <h1>MBBS in Kyrgyzstan</h1>
+            <p>Affordable world-class medical education with globally recognized degrees. Study at Kyrgyzstan's top medical universities with English-medium instruction, excellent infrastructure, and hands-on clinical training.</p>
+            <a href="#contact" class="cta-button">Start Your Application Today</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">5,000+</div>
+                <div class="stat-label">International Students</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$3,500</div>
+                <div class="stat-label">Annual Tuition Fees</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Years Program</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">English Medium</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Kyrgyzstan Section -->
+    <section class="why-kyrgyzstan">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Study MBBS in Kyrgyzstan?</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏛️</div>
+                    <h3>Globally Recognized Degrees</h3>
+                    <p>Medical degrees from Kyrgyzstan are recognized by WHO, MCI, PMDC, ECFMG, and medical councils worldwide, enabling graduates to practice medicine globally.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Low Cost Education</h3>
+                    <p>One of the most affordable MBBS programs abroad with tuition fees starting from $3,500/year and low cost of living compared to Western countries.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎓</div>
+                    <h3>No Entrance Exams</h3>
+                    <p>Direct admission based on 12th grade marks (50% in PCB for most universities) without requiring TOEFL/IELTS or entrance tests like MCAT.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏥</div>
+                    <h3>Excellent Clinical Exposure</h3>
+                    <p>Extensive practical training in university-affiliated hospitals with diverse patient cases starting from 3rd year of study.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌍</div>
+                    <h3>Multicultural Environment</h3>
+                    <p>Students from 50+ countries create a vibrant international community with cultural exchange opportunities.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛂</div>
+                    <h3>Easy Visa Process</h3>
+                    <p>High visa approval rate with simple documentation requirements and no interview needed for most students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Universities Section -->
+    <section class="universities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Top Medical Universities in Kyrgyzstan</h2>
+            </div>
+            <div class="university-container">
+                <div class="university-card">
+                    <div class="university-img">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Jalal-Abad State University">
+                        <div class="university-badge">MCI Approved</div>
+                    </div>
+                    <div class="university-info">
+                        <h3>Jalal-Abad State University</h3>
+                        <p>One of the top-ranked medical universities in Kyrgyzstan with modern infrastructure, highly qualified faculty, and excellent hospital affiliations for clinical training.</p>
+                        <div class="university-meta">
+                            <div class="meta-item">
+                                <div class="meta-value">$3,800</div>
+                                <div class="meta-label">Annual Tuition</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-value">6 Years</div>
+                                <div class="meta-label">Program</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-value">WHO</div>
+                                <div class="meta-label">Recognized</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="university-card">
+                    <div class="university-img">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="International School of Medicine">
+                        <div class="university-badge">Top Choice</div>
+                    </div>
+                    <div class="university-info">
+                        <h3>International School of Medicine</h3>
+                        <p>Premier medical institution with American-style curriculum, USMLE preparation, and partnerships with hospitals in Europe and Asia for clinical rotations.</p>
+                        <div class="university-meta">
+                            <div class="meta-item">
+                                <div class="meta-value">$4,500</div>
+                                <div class="meta-label">Annual Tuition</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-value">5+1 Years</div>
+                                <div class="meta-label">Program</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-value">ECFMG</div>
+                                <div class="meta-label">Listed</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="university-card">
+                    <div class="university-img">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Osh State University">
+                        <div class="university-badge">Best Value</div>
+                    </div>
+                    <div class="university-info">
+                        <h3>Osh State University</h3>
+                        <p>Established in 1951 with a strong reputation for medical education, offering quality training at the most affordable fees among Kyrgyz medical universities.</p>
+                        <div class="university-meta">
+                            <div class="meta-item">
+                                <div class="meta-value">$3,200</div>
+                                <div class="meta-label">Annual Tuition</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-value">6 Years</div>
+                                <div class="meta-label">Program</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-value">FAIMER</div>
+                                <div class="meta-label">Approved</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Process -->
+    <section class="admission-process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Simple Admission Process</h2>
+            </div>
+            <div class="process-container">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Check Eligibility</h3>
+                        <p>Minimum 50% marks in Physics, Chemistry, and Biology in 12th grade. NEET qualification required for Indian students (for MCI registration).</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Submit Documents</h3>
+                        <p>10th & 12th mark sheets, passport copy, birth certificate, medical certificate, and application form with 8 passport photos.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Receive Admission Letter</h3>
+                        <p>Get official admission confirmation within 2-3 weeks after document verification by the university.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Apply for Student Visa</h3>
+                        <p>University provides visa support documents. Submit at Kyrgyz embassy with passport and required fees.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Travel & Enrollment</h3>
+                        <p>Fly to Kyrgyzstan, complete university registration, medical check-up, and residence permit formalities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Living in Kyrgyzstan -->
+    <section class="living-section">
+        <div class="container">
+            <div class="living-container">
+                <div class="living-content">
+                    <h2>Life as a Medical Student in Kyrgyzstan</h2>
+                    <p>Kyrgyzstan offers a safe, welcoming environment for international students with affordable living costs and beautiful natural surroundings. The country has four distinct seasons with spectacular mountain views.</p>
+                    <p>Universities provide comfortable hostel accommodation with Indian food options available. The local people are friendly and English is widely understood in university areas.</p>
+                    <div class="living-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🏠</div>
+                            <div class="feature-text">
+                                <h4>Accommodation</h4>
+                                <p>Hostel fees: $800-1200/year with options for shared or private rooms</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🍛</div>
+                            <div class="feature-text">
+                                <h4>Food</h4>
+                                <p>Monthly food expenses: $150-200 with Indian restaurants near campuses</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🚍</div>
+                            <div class="feature-text">
+                                <h4>Transportation</h4>
+                                <p>Efficient public transport with student discounts, monthly pass: $10-15</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="living-image">
+                    <img src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80" alt="Life in Kyrgyzstan">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Students Say</h2>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>The quality of medical education at Jalal-Abad State University surprised me. The professors are very supportive, and we get good practical exposure from 3rd year onwards. The cost of living is very affordable compared to India.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Riya Patel">
+                        </div>
+                        <div class="author-info">
+                            <h4>Riya Patel</h4>
+                            <p>4th Year MBBS Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Choosing Osh State University was the best decision for my medical career. The university has excellent anatomy labs and modern equipment. After graduating, I cleared FMGE in first attempt and now working as resident doctor in Delhi.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Arjun Sharma">
+                        </div>
+                        <div class="author-info">
+                            <h4>Arjun Sharma</h4>
+                            <p>Alumni, Now Resident Doctor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Begin Your Medical Journey in Kyrgyzstan</h2>
+            <p>Our admission experts will guide you through the entire process - from university selection to visa assistance and travel arrangements. Limited seats available for 2024 intake!</p>
+            <a href="#contact" class="white-button">Apply Now for 2024 Intake</a>
+        </div>
+    </section>
+
+    <script>
+        // University Card Animation
+        document.querySelectorAll('.university-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('.university-img img');
+                img.style.transform = 'scale(1.1)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('.university-img img');
+                img.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Process Step Animation
+        document.querySelectorAll('.process-step').forEach(step => {
+            step.addEventListener('mouseenter', () => {
+                step.style.transform = 'translateX(10px)';
+            });
+            
+            step.addEventListener('mouseleave', () => {
+                step.style.transform = 'translateX(0)';
+            });
+        });
+        
+        // You would add more interactive elements here
+        // For example: form validation, modal popups, etc.
+    </script>
+</body>
+</html>
