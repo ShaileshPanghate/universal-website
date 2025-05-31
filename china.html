@@ -14,6 +14,390 @@
             --white: #ffffff;
         }
         
+        //css
+ 
+header {
+            background: var(--light, #fff);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 10;
+            /* Ensure nav appears above other content */
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-text span {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark, #333);
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Dropdown menu styling */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 10px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1000;
+            display: none;
+            /* Ensures it's hidden by default */
+        }
+
+        .nav-links li:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+            padding: 8px 20px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--dark);
+        }
+
+        /* ===== Mobile Responsive Styles ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 90px);
+                background: #fff;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s ease;
+                z-index: 999;
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+                width: 100%;
+            }
+
+            .dropdown-menu {
+                position: static;
+                display: none;
+                box-shadow: none;
+                padding-left: 15px;
+                width: 100%;
+                opacity: 1;
+                visibility: visible;
+                background: rgba(0, 0, 0, 0.03);
+                border-radius: 5px;
+                margin-top: 10px;
+            }
+
+            /* Disable hover effects on mobile */
+            .nav-links li:hover .dropdown-menu {
+                display: none;
+            }
+
+            .nav-links li.active .dropdown-menu {
+                display: block;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1000;
+            }
+
+            /* Prevent body scrolling when menu is open */
+            body.menu-open {
+                overflow: hidden;
+            }
+        }
+
+        /* ===== Form Popup Styling ===== */
+        .form-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            width: 90%;
+            max-width: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .form-popup.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .form-container {
+            padding: 30px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 22px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #777;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-header .form-logo {
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .form-header h3 {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .form-header p {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .form-group i {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: #3498db;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s;
+            background-color: #f9f9f9;
+        }
+
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+            outline: none;
+            background-color: white;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 15px;
+            left: 45px;
+            color: #999;
+            font-size: 15px;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus+label,
+        .form-group input:valid+label,
+        .form-group select:focus+label,
+        .form-group select:valid+label {
+            top: -10px;
+            left: 35px;
+            font-size: 12px;
+            background: white;
+            padding: 0 5px;
+            color: #3498db;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #2980b9, #1a252f);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(41, 128, 185, 0.3);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-group:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .form-group:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .form-group:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .form-group:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .form-group:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        /* ===== Responsive Styles ===== */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
         /* Hero Section */
         .mbbs-hero {
             background: linear-gradient(135deg, var(--primary) 0%, #2980b9 100%);
@@ -453,12 +837,223 @@
     </style>
 </head>
 <body>
+<header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo" id="logo">
+                    <img src="./assets/UNIVERSALLOGO.png" alt="Universal Education Logo">
+                    <div class="logo-text"><span></span></div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li>
+                        <a href="#">Study Abroad <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./mbbsabroad.html">MBBS Abroad</a></li>
+                            <li><a href="./bds.html">BDS</a></li>
+                            <li><a href="./be.html">B.E.</a></li>
+                            <li><a href="./md.html">MD</a></li>
+                            <li><a href="./ms.html">MS</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Destinations <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./india.html">India</a></li>
+                            <li><a href="./china.html">China</a></li>
+                            <li><a href="./russian.html">Russia</a></li>
+                            <li><a href="./kazrkystan.htm">Kyrgyzstan</a></li>
+                            <li><a href="./georgia.html">Georgia</a></li>
+                            <li><a href="./tajikistan.html">Tajikistan</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./lmcouncelling.html">Free Counseling</a></li>
+                            <li><a href="./lmadmission.html">Admission Guidance</a></li>
+                            <li><a href="./lmvisa.html">Visa Assistance</a></li>
+                            <li><a href="./lmarrival.html">Post-Arrival Support</a></li>
+                            <li><a href="./lmloan.html">Education Loans</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./director_msg.html">Director's Message</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+  <!-- JavaScript at the end of body -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            // Toggle main mobile menu
+            mobileMenuBtn.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+                document.body.classList.toggle('menu-open'); // Optional: to prevent scrolling when menu is open
+            });
+
+            // Handle dropdown menus on mobile
+            const navItemsWithDropdown = document.querySelectorAll('.nav-links li');
+
+            navItemsWithDropdown.forEach(item => {
+                if (item.querySelector('.dropdown-menu')) {
+                    const link = item.querySelector('a');
+
+                    link.addEventListener('click', function (e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            item.classList.toggle('active');
+
+                            // Close other open dropdowns
+                            navItemsWithDropdown.forEach(otherItem => {
+                                if (otherItem !== item && otherItem.classList.contains('active')) {
+                                    otherItem.classList.remove('active');
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+
+            // Optional: Close menu when clicking outside on mobile
+            document.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768 &&
+                    !e.target.closest('.nav-links') &&
+                    !e.target.closest('.mobile-menu-btn') &&
+                    navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            });
+        });
+    </script>
+    <!-- Form Popup -->
+    <div class="form-popup" id="popup-form">
+        <div class="form-container">
+            <button class="close-btn">&times;</button>
+            <div class="form-header">
+                <img src="./assets/UNIVERSALLOGO.png" alt="Universal Logo" class="form-logo">
+                <h3>Get Free Counseling</h3>
+                <p>Fill out this form to get expert guidance</p>
+            </div>
+
+            <form class="enquiry-form">
+                <div class="form-group">
+                    <input type="text" id="name" required>
+                    <label for="name">Full Name</label>
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Email Address</label>
+                    <i class="fas fa-envelope"></i>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" id="phone" required>
+                    <label for="phone">Phone Number</label>
+                    <i class="fas fa-phone"></i>
+                </div>
+
+                <div class="form-group">
+                    <select id="course" required>
+                        <option value=""></option>
+                        <option value="MBBS">MBBS Abroad</option>
+                        <option value="BDS">BDS Abroad</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="MD">MD/MS</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <label for="course">Course Interested In</label>
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+
+                <div class="form-group">
+                    <select id="country" required>
+                        <option value=""></option>
+                        <option value="Russia">Russia</option>
+                        <option value="China">China</option>
+                        <option value="Philippines">Philippines</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <label for="country">Preferred Destination</label>
+                    <i class="fas fa-globe"></i>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Submit Now</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const logo = document.getElementById('logo');
+            const formPopup = document.getElementById('popup-form');
+            const overlay = document.getElementById('overlay');
+            const closeBtn = document.querySelector('.close-btn');
+
+            logo.addEventListener('click', function (e) {
+                e.preventDefault();
+                formPopup.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            function closeForm() {
+                formPopup.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            overlay.addEventListener('click', closeForm);
+            closeBtn.addEventListener('click', closeForm);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeForm();
+                }
+            });
+
+            const form = document.querySelector('.enquiry-form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Thank you for your enquiry! We will contact you soon.');
+                closeForm();
+                form.reset();
+            });
+
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function () {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+        });
+    </script>
     <!-- Hero Section -->
     <section class="mbbs-hero">
         <div class="mbbs-hero-content">
             <h1>MBBS in China</h1>
             <p>World-class medical education at affordable costs with globally recognized degrees. Study at China's top medical universities with English-medium instruction and excellent clinical exposure.</p>
-            <a href="#contact" class="cta-button">Apply Now</a>
+            <a href="./contact.html" class="cta-button">Apply Now</a>
         </div>
     </section>
 
@@ -682,7 +1277,7 @@
         <div class="container">
             <h2>Ready to Start Your Medical Journey in China?</h2>
             <p>Our expert counselors will guide you through the entire admission process - from university selection to visa assistance. Begin your application today!</p>
-            <a href="#contact" class="white-button">Get Free Consultation</a>
+            <a href="./contact.html" class="white-button">Get Free Consultation</a>
         </div>
     </section>
 

@@ -16,17 +16,17 @@
                 <img src="./assets/UNIVERSALLOGO.png" alt="GlobalEd Logo" class="logo-img">
             </a>
             <nav class="navbar">
-                <a href="/">Home</a>
+                <a href="./index.html">Home</a>
                 <a href="/programs" class="active">Programs</a>
                 <a href="/countries">Countries</a>
                 <a href="/admissions">Admissions</a>
                 <a href="/contact">Contact</a>
             </nav>
             <div class="header-cta">
-                <a href="tel:+1234567890" class="cta-phone">
-                    <i class="fas fa-phone-alt"></i> +91 98222 40964
+                <a href="+91 95455 66777" class="cta-phone">
+                    <i class="fas fa-phone-alt"></i> +91 95455 66777
                 </a>
-                <button class="cta-btn">Free Consultation</button>
+               <a href="./lmcouncelling.html"> <button class="cta-btn">Free Consultation</button></a>
             </div>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -51,16 +51,36 @@
                         <i class="fas fa-check-circle"></i> No Donation
                     </div>
                 </div>
-                <div class="hero-search">
-                    <select class="country-select">
+               <div class="hero-search">
+                    <select class="country-select" id="country-select">
                         <option value="">Select Country</option>
-                        <option value="russia">Russia</option>
-                        <option value="ukraine">Ukraine</option>
+                        <option value="india" data-url="./india.html">India</option>
+                        <option value="russia" data-url="./russia.html">Russia</option>
                         <option value="china">China</option>
-                        <option value="kazakhstan">Kazakhstan</option>
-                        <option value="philippines">Philippines</option>
+                        <option value="georgia" data-url="/mbbs-in-georgia">Georgia</option>
                     </select>
-                    <select class="program-select">
+                </div>
+                    <script>
+                        document.getElementById('country-select').addEventListener('change', function() {
+                          const selectedValue = this.value;
+                          if (selectedValue) {
+                            // Define your page URLs for each country
+                            const countryPages = {
+                              'india': './india.html',
+                              'russia': './russia.html',
+                              'china': './china.html',
+                              'kazakhstan': './kazakhstan.html',
+                              'uzbekistan': './uzbekistan.html',
+                              'georgia': './georgia.html',
+                              'kyrgyzstan': './kyrgyzstan.html'
+                            };
+                            
+                            // Navigate to the selected country's page
+                            window.location.href = countryPages[selectedValue];
+                          }
+                        });
+                      </script>
+                  <!--    <select class="program-select">
                         <option value="">Select Program</option>
                         <option value="mbbs">MBBS</option>
                         <option value="bds">BDS</option>
@@ -68,7 +88,7 @@
                         <option value="ms">MS</option>
                     </select>
                     <button class="search-btn">Find Universities <i class="fas fa-arrow-right"></i></button>
-                </div>
+                -->
             </div>
             <div class="hero-image">
                 <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Medical students">
@@ -112,9 +132,8 @@
             </div>
         </div>
     </section>
-
     <!-- Popular Countries Section -->
-    <section class="popular-countries">
+    <section class="popular-countries" id="countries">
         <div class="container">
             <h2>Study Medicine in <span>Top Countries</span></h2>
             <div class="countries-grid">
@@ -131,7 +150,7 @@
                             <li><i class="fas fa-check"></i> European Standard Education</li>
                             <li><i class="fas fa-check"></i> WHO & NMC Recognized</li>
                         </ul>
-                        <button class="explore-btn">Explore Russian Universities <i class="fas fa-arrow-right"></i></button>
+                        <!-- <button class="explore-btn">Explore Russian Universities <i class="fas fa-arrow-right"></i></button> -->
                     </div>
                 </div>
                 <div class="country-card">
@@ -147,27 +166,78 @@
                             <li><i class="fas fa-check"></i> Advanced Infrastructure</li>
                             <li><i class="fas fa-check"></i> FMGE Coaching Included</li>
                         </ul>
-                        <button class="explore-btn">Explore Chinese Universities <i class="fas fa-arrow-right"></i></button>
+                        <!-- <button class="explore-btn">Explore Chinese Universities <i class="fas fa-arrow-right"></i></button> -->
                     </div>
                 </div>
                 <div class="country-card">
                     <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Philippines">
                     <div class="country-info">
-                        <h3>Philippines</h3>
+                        <h3>Nepal</h3>
                         <div class="country-stats">
-                            <span><i class="fas fa-university"></i> US Pattern Education</span>
+                            <span><i class="fas fa-university"></i> MBBS Degree (5.5 Years)</span>
                             <span><i class="fas fa-money-bill-wave"></i> ₹18-28 Lakhs</span>
                         </div>
                         <ul class="country-features">
-                            <li><i class="fas fa-check"></i> MD Program (Equivalent to MBBS)</li>
-                            <li><i class="fas fa-check"></i> English Speaking Country</li>
-                            <li><i class="fas fa-check"></i> High FMGE Passing Rate</li>
+                            <li><i class="fas fa-check"></i> MBBS Degree (5.5 Years)</li>
+                            <li><i class="fas fa-check"></i> English Medium of Instruction</li>
+                            <li><i class="fas fa-check"></i> FMGE Passing Rate(~25-35%)</li>
+                            <li><i class="fas fa-check"></i> NEET Qualifiacation Required</li>
                         </ul>
-                        <button class="explore-btn">Explore PH Universities <i class="fas fa-arrow-right"></i></button>
+                        <!-- <button class="explore-btn">Explore PH Universities <i class="fas fa-arrow-right"></i></button> -->
                     </div>
+                </div>              
+                <div class="country-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxhWoyXBLSA42ouuVVcwM18b4RWFpjkLbuag&s" alt="Philippines">
+                    <div class="country-info">
+                        <h3>Kazakhstan</h3>
+                        <div class="country-stats">
+                            <span><i class="fas fa-university"></i>15+ MCI Approved</span>
+                            <span><i class="fas fa-money-bill-wave"></i> ₹12-20 Lakhs</span>
+                        </div>
+                        <ul class="country-features">
+                        <li><i class="fas fa-check"></i>5-Year MBBS Program</li>
+                        <li><i class="fas fa-check"></i>European Education System</li>
+                        <li><i class="fas fa-check"></i>WHO Recognized</li>
+                        </ul>
+                    <!-- <a href="#" class="explore-btn">Explore Kazakh Universities →</a> -->
+                  </div>
+                </div>
+                <div class="country-card">
+                    <img src="https://www.tutelagestudy.com/uploads/university/bukhara-state-medical-university_1697530723.jpg" alt="Philippines">
+                    <div class="country-info">
+                        <h3>Uzbekistan</h3>
+                        <div class="country-stats">
+                            <span><i class="fas fa-university"></i>10+ MCI Approved</span>
+                            <span><i class="fas fa-money-bill-wave"></i>₹10-18 Lakhs</span>
+                        </div>
+                        <ul class="country-features">
+                        <li><i class="fas fa-check"></i>5-Year MBBS Program</li>
+                        <li><i class="fas fa-check"></i>Affordable Tuition Fees</li>
+                        <li><i class="fas fa-check"></i>WHO & NMC Recognized</li>
+                        </ul>
+                    <!-- <a href="#" class="explore-btn">Explore Kazakh Universities →</a> -->
+                  </div>
+                </div>
+                <div class="country-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgWrSyRqEVG09tiCVePHvhC9kWZ0JX0_JhKw&s" alt="Philippines">
+                    <div class="country-info">
+                        <h3>Georgia</h3>
+                        <div class="country-stats">
+                            <span><i class="fas fa-university"></i>12+ MCI Approved</span>
+                            <span><i class="fas fa-money-bill-wave"></i>₹18-30 Lakhs (Total Cost)</span>
+                        </div>
+                            <ul class="country-features">
+                            <li><i class="fas fa-check"></i>6-Year MD Program</li>
+                            <li><i class="fas fa-check"></i>European Curriculum</li>
+                            <li><i class="fas fa-check"></i>WHO & NMC Recognized</li>
+                            <li><i class="fas fa-check"></i>100% English Medium</li>
+                            </ul>
+                        </div>
+                    <!-- <a href="#" class="explore-btn">Explore Kazakh Universities →</a> -->
+                  </div>
                 </div>
             </div>
-            <button class="view-all-btn">View All 15+ Countries <i class="fas fa-arrow-right"></i></button>
+            <!-- <button class="view-all-btn">View All 15+ Countries <i class="fas fa-arrow-right"></i></button> -->
         </div>
     </section>
 
@@ -221,89 +291,7 @@
         </div>
     </section>
 
-    <!-- University Spotlight -->
-    <section class="university-spotlight">
-        <div class="container">
-            <h2>Featured <span>Medical Universities</span></h2>
-            <div class="university-slider">
-                <!-- University 1 -->
-                <div class="university-card">
-                    <div class="university-badge">MCI Approved</div>
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Crimea University">
-                    <div class="university-content">
-                        <h3>Crimea Federal University</h3>
-                        <div class="university-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Simferopol, Russia</span>
-                            <span><i class="fas fa-star"></i> 4.8/5 (120 Reviews)</span>
-                        </div>
-                        <div class="university-details">
-                            <div class="detail-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <div>
-                                    <small>Course</small>
-                                    <p>MBBS (6 Years)</p>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-money-bill-wave"></i>
-                                <div>
-                                    <small>Fees</small>
-                                    <p>₹22 Lakhs Total</p>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-user-graduate"></i>
-                                <div>
-                                    <small>Eligibility</small>
-                                    <p>50% in PCB, NEET</p>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="apply-now">Apply Now</button>
-                        <button class="brochure-btn"><i class="fas fa-download"></i> Brochure</button>
-                    </div>
-                </div>
-                
-                <!-- University 2 -->
-                <div class="university-card">
-                    <div class="university-badge">WHO Listed</div>
-                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Nanjing Medical University">
-                    <div class="university-content">
-                        <h3>Nanjing Medical University</h3>
-                        <div class="university-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Nanjing, China</span>
-                            <span><i class="fas fa-star"></i> 4.7/5 (95 Reviews)</span>
-                        </div>
-                        <div class="university-details">
-                            <div class="detail-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <div>
-                                    <small>Course</small>
-                                    <p>MBBS (5+1 Years)</p>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-money-bill-wave"></i>
-                                <div>
-                                    <small>Fees</small>
-                                    <p>₹28 Lakhs Total</p>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-user-graduate"></i>
-                                <div>
-                                    <small>Eligibility</small>
-                                    <p>60% in PCB, NEET</p>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="apply-now">Apply Now</button>
-                        <button class="brochure-btn"><i class="fas fa-download"></i> Brochure</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  
 
     <!-- Admission Process -->
     <section class="admission-process">
@@ -387,21 +375,6 @@
             </div>
         </div>
     </section>
-
-    <!-- CTA Section -->
-    <section class="cta-medical">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Start Your <span>Medical Journey</span> Today!</h2>
-                <p>Get free counseling on MBBS/BDS/MD/MS admissions abroad</p>
-                <div class="cta-buttons">
-                    <button class="cta-btn"><i class="fas fa-phone-alt"></i> Call Now: +91 9822240964</button>
-                    <button class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer-medical">
         <div class="container">
@@ -411,7 +384,7 @@
                     <p>Leading Medical Education Consultancy for MBBS, BDS, MD & MS abroad since 2010.</p>
                     <div class="footer-contact">
                         <p><i class="fas fa-envelope"></i> manager.universaledu@gmail.com</p>
-                        <p><i class="fas fa-phone-alt"></i> +91 98222 40964</p>
+                        <p><i class="fas fa-phone-alt"></i> +91 95455 66777</p>
                     </div>
                 </div>
                 <div class="footer-col">

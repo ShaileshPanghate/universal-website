@@ -24,7 +24,7 @@
         <div class="container">
             <!-- Logo -->
             <div class="logo-container">
-                <a href="#" class="logo">
+                <a href="./index.html" class="logo">
                     <img src="./assets/UNIVERSALLOGO.png" alt="GlobalEd Logo" class="logo-img">
                 </a>
             </div>
@@ -35,26 +35,10 @@
                 <a href="./contact.html">Contact</a>
             </nav>
             
-            <!-- Call-to-Action -->
-            <div class="header-cta">
-                <a href="./contact.html" class="btn">Free Consultation</a>
-            </div>
         </div>
     </header>
     
-    <!-- Rest of your content goes here -->
-    
-                <a href="tel:+1234567890" class="cta-phone">
-                    <i class="fas fa-phone-alt"></i> +918793717804
-                </a>
-            </div>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Counseling Section -->
+        <!-- Hero Counseling Section -->
     <section class="counseling-hero">
         <div class="container">
             <div class="hero-content">
@@ -94,11 +78,10 @@
                     <div class="form-group">
                         <select required>
                             <option value="">Preferred Country</option>
+                            <option>India</option>
                             <option>Russia</option>
                             <option>China</option>
-                            <option>Ukraine</option>
                             <option>Kazakhstan</option>
-                            <option>Philippines</option>
                             <option>Not Sure</option>
                         </select>
                         <i class="fas fa-globe-asia"></i>
@@ -123,6 +106,33 @@
                 </form>
             </div>
         </div>
+        <script>
+            document.getElementById("counselingForm").addEventListener("submit", function (e) {
+              e.preventDefault();
+          
+              const form = e.target;
+          
+              const name = form.querySelector("input[type='text']").value.trim();
+              const email = form.querySelector("input[type='email']").value.trim();
+              const phone = form.querySelector("input[type='tel']").value.trim();
+              const country = form.querySelectorAll("select")[0].value;
+              const course = form.querySelectorAll("select")[1].value;
+          
+              const message = `Hello, I would like to book a free counseling session.
+          
+          👤 Name: ${name}
+          📧 Email: ${email}
+          📞 Phone: ${phone}
+          🌍 Preferred Country: ${country}
+          🎓 Interested Course: ${course}`;
+          
+              const encodedMessage = encodeURIComponent(message);
+              const whatsappNumber = "918793717804"; // with country code
+          
+              window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
+            });
+          </script>
+          
         <div class="hero-waves">
             <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#4361ee"></path>
@@ -131,61 +141,6 @@
             </svg>
         </div>
     </section>
-
-<section>
-   <!-- Counseling Form -->
-   <div class="counseling-form animate_animated animate_zoomIn">
-    <div class="form-header">
-        <h3>Book Your Free Session</h3>
-        <p>Fill this form to get callback within 30 minutes</p>
-    </div>
-    <form id="counselingForm">
-        <div class="form-group">
-            <input type="text" id="userName" placeholder="Your Name" required>
-            <i class="fas fa-user"></i>
-        </div>
-        <div class="form-group">
-            <input type="email" id="userEmail" placeholder="Email Address" required>
-            <i class="fas fa-envelope"></i>
-        </div>
-        <div class="form-group">
-            <input type="tel" id="userPhone" placeholder="Phone Number" required>
-            <i class="fas fa-phone-alt"></i>
-        </div>
-        <div class="form-group">
-            <select id="preferredCountry" required>
-                <option value="">Preferred Country</option>
-                <option>Russia</option>
-                <option>China</option>
-                <option>Ukraine</option>
-                <option>Kazakhstan</option>
-                <option>Philippines</option>
-                <option>Not Sure</option>
-            </select>
-            <i class="fas fa-globe-asia"></i>
-        </div>
-        <div class="form-group">
-            <select id="courseInterest" required>
-                <option value="">Course Interested In</option>
-                <option>MBBS</option>
-                <option>BDS</option>
-                <option>MD (USA)</option>
-                <option>MS (UK)</option>
-                <option>Not Sure</option>
-            </select>
-            <i class="fas fa-graduation-cap"></i>
-        </div>
-        <button type="submit" class="submit-btn">
-            <i class="fas fa-calendar-check"></i> Book Free Session
-        </button>
-        <div class="form-footer">
-            <i class="fas fa-lock"></i> Your information is 100% secure
-        </div>
-    </form>
-</div>
-</div>
-</div>
-</section>
 
     <!-- Counseling Process -->
     <section class="counseling-process">
@@ -393,8 +348,8 @@
                 <h2>Still Have Questions?</h2>
                 <p>Speak directly to our senior counselor now</p>
                 <div class="cta-buttons">
-                    <a href="tel:+91 98222 40964" class="cta-btn">
-                        <i class="fas fa-phone-alt"></i> Call +91 98222 40964
+                    <a href="tel:+91 87937 17804" class="cta-btn">
+                        <i class="fas fa-phone-alt"></i> Call +91 87937 17804
 
 
                     </a>
@@ -405,7 +360,7 @@
                 <div class="cta-info">
                     <div class="info-item">
                         <i class="fas fa-clock"></i>
-                        <span>Mon-Sat: 9AM to 7PM</span>
+                        <span>Mon-Sat: 10AM to 7PM</span>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
@@ -425,7 +380,7 @@
                     <p>Leading Medical Education Consultancy helping students study MBBS/BDS/MD/MS abroad since 2000.</p>
                     <div class="footer-contact">
                         <p><i class="fas fa-map-marker-alt"></i> Shri Sai Prasad Enclave, Wardha Rd, above Raymond Showroom, Vivekanand Nagar, Nagpur, Maharashtra 440015</p>
-                        <p><i class="fas fa-phone-alt"></i> +91 98222 40964</p>
+                        <p><i class="fas fa-phone-alt"></i> +91 87937 17804</p>
                         <p><i class="fas fa-envelope"></i> manager.universaledu@gmail.com</p>
                     </div>
                 </div>
@@ -442,11 +397,9 @@
                 <div class="footer-col">
                     <h4>Countries</h4>
                     <ul>
-                        <li><a href="/russia">MBBS in Russia</a></li>
-                        <li><a href="/china">MBBS in China</a></li>
-                        <li><a href="/ukraine">MBBS in Ukraine</a></li>
-                        <li><a href="/philippines">MD in Philippines</a></li>
-                        <li><a href="/kazakhstan">MBBS in Kazakhstan</a></li>
+                        <li><a href="./russia.html">MBBS in Russia</a></li>
+                        <li><a href="./china.html">MBBS in China</a></li>
+                        <li><a href="./kazakhstan.html">MBBS in Kazakhstan</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

@@ -34,7 +34,6 @@
             </nav>
             <div class="header-cta">
                 <a href="tel:+1234567890" class="cta-phone">
-                    <i class="fas fa-phone-alt"></i> +91 98222 40964
                 </a>
             </div>
             <div class="mobile-menu-btn">
@@ -63,12 +62,12 @@
                 </div>
                 
                 <div class="hero-buttons animate__animated animate__fadeInUp">
-                    <a href="#process" class="btn-primary">
+                    <!-- <a href="#process" class="btn-primary">
                         <i class="fas fa-passport"></i> Visa Process
                     </a>
                     <a href="#contact" class="btn-secondary">
                         <i class="fas fa-headset"></i> Free Consultation
-                    </a>
+                    </a> -->
                 </div>
             </div>
             <div class="hero-image animate__animated animate__zoomIn">
@@ -220,8 +219,6 @@
                 <div class="tab-buttons">
                     <button class="tab-btn active" data-tab="russia">Russia</button>
                     <button class="tab-btn" data-tab="china">China</button>
-                    <button class="tab-btn" data-tab="ukraine">Ukraine</button>
-                    <button class="tab-btn" data-tab="philippines">Philippines</button>
                 </div>
                 
                 <div class="tab-content active" id="russia">
@@ -495,7 +492,7 @@
                             <i class="fas fa-phone-alt"></i>
                             <div>
                                 <h4>Call Us</h4>
-                                <p>+91 98222 40964</p>
+                                <p>+91 95455 66777</p>
                             </div>
                         </div>
                         
@@ -519,7 +516,7 @@
                             <i class="fas fa-clock"></i>
                             <div>
                                 <h4>Working Hours</h4>
-                                <p>Mon-Sat: 9AM to 7PM</p>
+                                <p>Mon-Sat: 10AM to 7PM</p>
                             </div>
                         </div>
                     </div>
@@ -537,10 +534,9 @@
                         <div class="form-group">
                             <select required>
                                 <option value="">Target Country</option>
+                                <option>India</option>
                                 <option>Russia</option>
                                 <option>China</option>
-                                <option>Ukraine</option>
-                                <option>Philippines</option>
                                 <option>Kazakhstan</option>
                             </select>
                         </div>
@@ -561,7 +557,31 @@
             </div>
         </div>
     </section>
-
+    <script>
+        document.getElementById("visaForm").addEventListener("submit", function (e) {
+          e.preventDefault();
+      
+          const form = e.target;
+          const name = form.querySelector("input[type='text']").value.trim();
+          const phone = form.querySelector("input[type='tel']").value.trim();
+          const country = form.querySelectorAll("select")[0].value;
+          const course = form.querySelectorAll("select")[1].value;
+      
+          const message = `Hello, I would like a free visa consultation.
+      
+      👤 Name: ${name}
+      📞 Phone: ${phone}
+      🌍 Target Country: ${country}
+      🎓 Course: ${course}`;
+      
+          const encodedMessage = encodeURIComponent(message);
+          const whatsappNumber = "918793717804"; // 91 is India’s country code
+      
+          // Redirect to WhatsApp
+          window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
+        });
+      </script>
+      
     <!-- Footer -->
     <footer class="visa-footer">
         <div class="container">
