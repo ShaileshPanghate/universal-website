@@ -723,7 +723,7 @@
                         <li><a href="./india.html">India</a></li>
                         <li><a href="./china.html">China</a></li>
                         <li><a href="./russian.html">Russia</a></li>
-                        <li><a href="./kazrkystan.htm">Kyrgyzstan</a></li>
+                        <li><a href="./kazrkystan.html">Kyrgyzstan</a></li>
                         <li><a href="./georgia.html">Georgia</a></li>
                         <li><a href="./tajikistan.html">Tajikistan</a></li>                        
                     </ul>
@@ -893,7 +893,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const form = document.querySelector('.enquiry-form');
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('Thank you for your enquiry! We will contact you soon.');
+            const formD = e.target;
+
+                const name = formD.querySelector("input[type='text']").value.trim();
+                const email = formD.querySelector("input[type='email']").value.trim();
+                const phone = formD.querySelector("input[type='tel']").value.trim();
+                const country = formD.querySelectorAll("select")[0].value;
+                const course = formD.querySelectorAll("select")[1].value;
+
+                const message = `Hello, I would like to book a free counseling session.
+      
+                    👤 Name: ${name}
+                    📧 Email: ${email}
+                    📞 Phone: ${phone}
+                    🌍 Preferred Country: ${country}
+                    🎓 Interested Course: ${course}`;
+
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappNumber = "918793717804"; // with country code
+
+                window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
             closeForm();
             form.reset();
         });
