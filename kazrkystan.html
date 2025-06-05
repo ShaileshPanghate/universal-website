@@ -956,79 +956,247 @@
             font-size: 1rem;
         }
         
-        /* Testimonials */
+        /* ===== Testimonials Section ===== */
         .testimonials {
-            padding: 90px 0;
-            background-color: var(--light);
+            background: linear-gradient(rgba(0, 86, 164, 0.9), rgba(0, 86, 164, 0.9)),
+                url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .testimonial-container {
-            max-width: 1200px;
+
+        .testimonials .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .testimonials .section-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .testimonials .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .testimonials .divider {
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
             margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .testimonial-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        
+
         .testimonial-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .student-photo {
             position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        
-        .testimonial-card::before {
-            content: '"';
+
+        .student-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .university-badge {
             position: absolute;
-            top: 20px;
-            left: 25px;
-            font-size: 6rem;
-            color: rgba(44, 120, 115, 0.08);
-            font-family: serif;
-            line-height: 1;
-            z-index: 1;
+            bottom: -10px;
+            right: -10px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #fff;
+            padding: 5px;
         }
-        
+
+        .university-badge img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
         .testimonial-content {
             position: relative;
-            z-index: 2;
-            margin-bottom: 25px;
-            font-style: italic;
-            color: var(--text);
-            line-height: 1.8;
-            font-size: 1.1rem;
+            color: white;
         }
-        
+
+        .quote-icon {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.1);
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            color: white;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+        }
+
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+        }
+
+        .testimonial-text::before {
+            top: -20px;
+            left: -10px;
+        }
+
+        .testimonial-text::after {
+            bottom: -40px;
+            right: -10px;
+        }
+
+        .student-info h4 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .student-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            color: #f39c12;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .rating span {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .testimonial-cards {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+            }
+
+            .testimonials {
+                background-attachment: scroll;
+                padding: 60px 0;
+            }
+
+            .testimonials .section-title {
+                font-size: 2rem;
+            }
+
+            .testimonials .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .student-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .university-badge {
+                width: 50px;
+                height: 50px;
+                bottom: -5px;
+                right: -5px;
+            }
+        }
+
+        /* Slider fallback styles (hidden by default) */
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            display: none;
+        }
+
+        .testimonial-item {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin: 0 15px;
+            backdrop-filter: blur(5px);
+        }
+
         .testimonial-author {
             display: flex;
             align-items: center;
+            justify-content: center;
         }
-        
+
         .author-img {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: 20px;
-            border: 3px solid var(--primary);
+            margin-right: 15px;
+            border: 3px solid var(--accent);
         }
-        
+
         .author-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-        
-        .author-info h4 {
-            color: var(--dark);
-            margin-bottom: 5px;
-            font-size: 1.3rem;
-        }
-        
-        .author-info p {
-            color: var(--primary);
-            font-weight: 600;
         }
         
         /* CTA Section */
@@ -1392,7 +1560,7 @@
                     🎓 Interested Course: ${course}`;
 
                 const encodedMessage = encodeURIComponent(message);
-                const whatsappNumber = "918793717804"; // with country code
+                const whatsappNumber = "919545566777"; // with country code
 
                 window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
 
@@ -1655,35 +1823,109 @@
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
-            <div class="section-title">
-                <h2>What Our Students Say</h2>
+            <div class="section-header">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-subtitle">Dreams Fulfilled Across Continents</p>
+                <div class="divider"></div>
             </div>
-            <div class="testimonial-container">
+
+            <div class="testimonial-cards">
+                <!-- Testimonial Card 1 -->
                 <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>The quality of medical education at Jalal-Abad State University surprised me. The professors are very supportive, and we get good practical exposure from 3rd year onwards. The cost of living is very affordable compared to India.</p>
+                    <div class="student-photo">
+                        <img src="assets/ChatGPT man.png" alt="Rutvik Fale">
+                       
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Riya Patel">
-                        </div>
-                        <div class="author-info">
-                            <h4>Riya Patel</h4>
-                            <p>4th Year MBBS Student</p>
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">Universal Education transformed my dream of studying MBBS in Russia
+                            into reality. Their end-to-end guidance from university selection to visa processing was
+                            flawless. The local support team in Kazan made my transition seamless.</p>
+                        <div class="student-info">
+                            <h4>Rutvik kishor Fale</h4>
+                            <p>MBBS Graduate, Kazan state medical university</p>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Testimonial Card 2 -->
                 <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>Choosing Osh State University was the best decision for my medical career. The university has excellent anatomy labs and modern equipment. After graduating, I cleared FMGE in first attempt and now working as resident doctor in Delhi.</p>
+                    <div class="student-photo">
+                        <img src="assets/boyyy.png" alt="Meet Raut">
+                       
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Arjun Sharma">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">The cultural immersion and academic excellence I experienced through
+                            Universal Education program exceeded all expectations. Their 24/7 support system gave my
+                            family and me complete peace of mind throughout my studies.</p>
+                        <div class="student-info">
+                            <h4>Meet Mahendra Raut</h4>
+                            <p>MBBS Student, TVER state medical university, Russia</p>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
                         </div>
-                        <div class="author-info">
-                            <h4>Arjun Sharma</h4>
-                            <p>Alumni, Now Resident Doctor</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial Card 3 -->
+                <div class="testimonial-card">
+                    <div class="student-photo">
+                        <img src="assets/ChatGPT girl.png" alt="Nayan Sathawane">
+                        
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">As a female student, I was apprehensive about studying abroad alone.
+                            Universal Education provided exceptional support, from accommodation to local mentorship.
+                            Today I'm confidently pursuing my medical degree in Moscow with great academic results.</p>
+                        <div class="student-info">
+                            <h4>Nayan Vishnu Sathawane</h4>
+                            <p>MBBS Student, Northern State Medical University</p>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Card 4 -->
+                <div class="testimonial-card">
+                    <div class="student-photo">
+                        <img src="assets/ChatGPT Image Apr 21, 2025, 03_24_47 PM.png" alt="Meghraj Bhoyar">
+                       
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">The scholarship guidance from Universal Education helped me secure
+                            50% tuition waiver. Their expertise in documentation and application process made all the
+                            difference. I'm now in my final year with excellent clinical exposure.</p>
+                        <div class="student-info">
+                            <h4>Rahul Patel</h4>
+                            <p>MBBS Student, TVER State Medical University, Russia</p>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1695,8 +1937,8 @@
     <section class="cta-section">
         <div class="cta-container">
             <h2>Begin Your Medical Journey in Kyrgyzstan</h2>
-            <p>Our admission experts will guide you through the entire process - from university selection to visa assistance and travel arrangements. Limited seats available for 2026 intake!</p>
-            <a href="./contact.html" class="white-button">Apply Now for 2026 Intake</a>
+            <p>Our admission experts will guide you through the entire process - from university selection to visa assistance and travel arrangements. Limited seats available for 2025 intake!</p>
+            <a href="./contact.html" class="white-button">Apply Now for 2025 Intake</a>
         </div>
     </section>
 
